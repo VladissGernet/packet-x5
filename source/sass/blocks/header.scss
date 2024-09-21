@@ -1,13 +1,21 @@
 .header {
-  padding: 28px 0;
-
-  background-color: $color-neon-blue;
+  margin-top: 53px;
 
   .container {
     display: flex;
   }
 
   &__logo {
-    color: $color-default-white;
+    margin-left: 125px;
+    transition: opacity $trans-default;
+
+    img {
+      width: 165px;
+      height: 49px;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
   }
 }
