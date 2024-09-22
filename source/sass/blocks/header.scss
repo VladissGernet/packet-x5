@@ -1,5 +1,81 @@
 .header {
-  margin-top: 53px;
+  padding-top: 53px;
+  position: relative;
+
+  @include vp-1023 {
+    padding-top: 10px;
+    min-height: 423px;
+  }
+
+  // Декоративный фон.
+
+  &__background,
+  &__desktop-gradient,
+  &__ellipse,
+  &__background-image {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+
+  &__background {
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__desktop-gradient {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1440px;
+    height: 900px;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__ellipse {
+    right: 0;
+    width: 1440px;
+    height: 900px;
+
+    & picture {
+      display: block;
+    }
+
+    @include vp-1023 {
+      top: 0;
+      right: 50%;
+      transform: translateX(50%);
+      // Исправляю глюк картинки
+      width: calc(100% + 1px);
+      height: 480px;
+    }
+  }
+
+  &__background-image {
+    top: 1px;
+    right: 121px;
+    width: 654px;
+    height: 648px;
+
+    @include vp-1023 {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    @include vp-767 {
+      width: 102%;
+      right: 50%;
+      top: 135px;
+      transform: translateX(calc(50% - 16px));
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
 
   .container {
     display: flex;
@@ -9,9 +85,20 @@
     margin-left: 125px;
     transition: opacity $trans-default;
 
+    @include vp-1023 {
+      margin: 0 auto;
+    }
+
     img {
       width: 165px;
       height: 49px;
+
+      @include vp-1023 {
+        // Красит картинку на планшете в белый цвет.
+        filter: brightness(0) invert(1);
+        width: 119px;
+        height: 40px;
+      }
     }
 
     @include hover-focus {

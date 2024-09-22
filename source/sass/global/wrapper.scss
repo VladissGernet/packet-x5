@@ -1,8 +1,6 @@
 .wrapper {
-  & > img {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-  }
+  min-width: 320px;
+  // Необходимо для того, чтобы не вываливался
+  // декоративный background в header.
+  overflow: hidden;
 }

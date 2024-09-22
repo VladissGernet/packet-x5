@@ -1,6 +1,15 @@
 mixin header(headerMods, currentUrl)
 
   header.header(class=headerMods)
+    .header__background
+      .header__desktop-gradient
+        img(src="img/svg/header-desktop-gradient.svg", width="1440", height="900", alt="")
+      .header__ellipse
+        picture
+          source(type="image/svg+xml", media="(max-width: 1023px)", srcset="img/svg/header-ellipse-mobile.svg")
+          img(src="img/svg/header-ellipse-desktop.svg", width="1440", height="900", alt="")
+      .header__background-image
+        +img("content/header", "header-background", "png", 654, 648, "")
     .container
       if(currentUrl === "index.html")
         //- lighthouse снимает 10 баллов SEO за <a> без href
