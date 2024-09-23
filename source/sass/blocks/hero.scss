@@ -23,6 +23,10 @@
     }
   }
 
+  &__form {
+    margin-top: 39px;
+  }
+
   & &__toggle {
     padding: 0;
     display: inline;
@@ -30,9 +34,7 @@
 
   &__submit {
     display: block;
-    margin-top: 20px;
-
-    // margin-left: 450px;
-    // scale: 6;
+    margin-top: 14px;
+    min-width: 327px;
   }
 }
