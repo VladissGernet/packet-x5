@@ -9,6 +9,10 @@
   &__content {
     max-width: 450px;
 
+    @include vp-1023 {
+      margin: 0 auto;
+    }
+
     h2 {
       font-size: 64px;
       font-weight: 700;
@@ -17,11 +21,27 @@
       color: $dodger-blue;
       margin: 0;
 
+      @include vp-1279 {
+        font-size: 40px;
+        line-height: 42px;
+      }
+
       @include vp-1023 {
         font-size: 48px;
         line-height: 100%;
         color: $color-default-white;
-        min-height: 393px;
+        min-height: 472px;
+      }
+
+      @include vp-767 {
+        min-height: 413px;
+      }
+
+      @include vp-374 {
+        font-size: 32px;
+        line-height: 36px;
+        max-width: 250px;
+        min-height: 343px;
       }
     }
 
@@ -33,7 +53,8 @@
       color: $nero;
       margin: 40px 0 0;
 
-      @include vp-1023 {
+      @include vp-1279 {
+        margin-top: 20px;
         font-size: 18px;
         line-height: 135%;
         letter-spacing: -0.02em;
@@ -45,7 +66,8 @@
     margin-top: 39px;
 
     @include vp-1023 {
-      margin-top: 22px;
+      margin: 22px auto 0;
+      max-width: 327px;
     }
   }
 
@@ -62,6 +84,10 @@
     padding-right: 70px;
 
     @include vp-1023 {
+      min-width: unset;
+      width: 100%;
+      max-width: 340px;
+
       &.js-hero-submit-activated {
         color: $color-default-white;
 

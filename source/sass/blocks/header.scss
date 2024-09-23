@@ -42,6 +42,10 @@
       display: block;
     }
 
+    @include vp-1279 {
+      width: 100%;
+    }
+
     @include vp-1023 {
       top: 0;
       right: 50%;
@@ -58,7 +62,13 @@
     width: 654px;
     height: 648px;
 
+    @include vp-1279 {
+      width: 40%;
+    }
+
     @include vp-1023 {
+      width: 496px;
+      top: 92px;
       right: 50%;
       transform: translateX(50%);
     }

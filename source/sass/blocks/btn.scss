@@ -49,6 +49,11 @@
     color: $heather;
 
     pointer-events: none;
+    cursor: not-allowed;
+
+    @include vp-1023 {
+
+    }
   }
 
   @include hover-focus {
@@ -56,7 +61,7 @@
     color: $color-default-white;
 
     &::after {
-      transform: translateX(-10%);
+      transform: translateX(-8%);
     }
 
     &:active {

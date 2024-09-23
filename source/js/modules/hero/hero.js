@@ -9,8 +9,10 @@ const initHero = () => {
   checkbox.addEventListener('change', (evt) => {
     if (evt.target.checked) {
       submit.classList.add('js-hero-submit-activated');
+      submit.disabled = false;
     } else {
       submit.classList.remove('js-hero-submit-activated');
+      submit.disabled = true;
     }
   });
 
