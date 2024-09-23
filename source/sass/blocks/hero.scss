@@ -11,6 +11,7 @@
 
     @include vp-1023 {
       margin: 0 auto;
+      max-width: 788px;
     }
 
     h2 {
@@ -31,10 +32,16 @@
         line-height: 100%;
         color: $color-default-white;
         min-height: 472px;
+        text-align: center;
       }
 
       @include vp-767 {
         min-height: 412px;
+      }
+
+      @include vp-424 {
+        text-align: left;
+        margin: 0 auto;
       }
 
       @include vp-374 {
@@ -42,6 +49,7 @@
         line-height: 36px;
         max-width: 250px;
         min-height: 410px;
+        text-align: center;
       }
     }
 
@@ -58,6 +66,14 @@
         font-size: 18px;
         line-height: 135%;
         letter-spacing: -0.02em;
+      }
+
+      @include vp-1023 {
+        text-align: center;
+      }
+
+      @include vp-424 {
+        text-align: left;
       }
     }
   }

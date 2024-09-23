@@ -57,6 +57,11 @@
       right: 50%;
       transform: translateX(50%);
 
+      img {
+        width: 100%;
+        height: 590px;
+      }
+
       position: relative;
 
       // Защита от ошибки загрузки градиента
@@ -74,12 +79,12 @@
     }
 
     @include vp-767 {
-      &::before {
-        height: 300px;
-      }
-
       img {
         height: 480px;
+      }
+
+      &::before {
+        height: 300px;
       }
     }
   }
