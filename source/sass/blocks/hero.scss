@@ -1,0 +1,38 @@
+.hero {
+  margin-top: 40px;
+
+  &__content {
+    max-width: 450px;
+
+    h2 {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 70px;
+      letter-spacing: -0.02em;
+      color: $dodger-blue;
+      margin: 0;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.01em;
+      color: $nero;
+      margin: 40px 0 0;
+    }
+  }
+
+  & &__toggle {
+    padding: 0;
+    display: inline;
+  }
+
+  &__submit {
+    display: block;
+    margin-top: 20px;
+
+    // margin-left: 450px;
+    // scale: 6;
+  }
+}

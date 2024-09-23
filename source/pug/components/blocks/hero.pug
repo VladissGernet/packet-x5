@@ -1,0 +1,21 @@
+mixin hero()
+  section.hero
+    .container
+      .hero__content
+        h2
+          | Чем дольше&nbsp;&mdash;
+          | тем больше!
+        p
+          | Мы&nbsp;считаем каждый день вместе! Проверьте, сколько вы&nbsp;с&nbsp;&laquo;Пакетом&raquo;,
+          | выигрывайте баллы &laquo;X5&nbsp;Клуба&raquo;
+          | и&nbsp;ценные призы от&nbsp;Ситилинк.
+      form.hero__form(method="post", enctype="multipart/form-data", action="#", autocomplete="off")
+        +custom-toggle({
+          inputLabel: "Я согласен на",
+          inputName: "user-agreement",
+          inputValue: "true",
+          inputChecked: false
+        }).custom-toggle--radio.hero__toggle
+        a.hero__agreement(href="#")
+          | участие в акции
+        +btn({text: "Принять участие"}).hero__submit
