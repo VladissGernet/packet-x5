@@ -16,6 +16,5 @@ mixin hero()
           inputValue: "true",
           inputChecked: false
         }).custom-toggle--radio.hero__toggle
-        a.hero__agreement(href="#")
-          | участие в акции
+        +link({text: "участие в акции"}).hero__link
         +btn({text: "Принять участие"}).hero__submit

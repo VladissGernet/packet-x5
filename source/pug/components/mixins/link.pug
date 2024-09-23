@@ -1,0 +1,5 @@
+mixin link(options = {})
+  - const href = options.href || "#";
+  - const text = options.text || "";
+
+  a.link(href=href)&attributes(attributes)= text
