@@ -52,7 +52,7 @@
     cursor: not-allowed;
 
     @include vp-1023 {
-
+      background-color: $azure;
     }
   }
 

@@ -50,9 +50,19 @@
       top: 0;
       right: 50%;
       transform: translateX(50%);
+
       // Исправляю глюк картинки
       width: calc(100% + 1px);
-      height: 480px;
+
+      img {
+        height: 572px;
+      }
+    }
+
+    @include vp-767 {
+      img {
+        height: 480px;
+      }
     }
   }
 
@@ -74,14 +84,10 @@
     }
 
     @include vp-767 {
-      width: 102%;
+      width: 385px;
       right: 50%;
-      top: 135px;
+      top: 134px;
       transform: translateX(calc(50% - 16px));
-
-      img {
-        width: 100%;
-      }
     }
   }
 
