@@ -1,5 +1,10 @@
 .hero {
   margin-top: 40px;
+  margin-bottom: 40px;
+
+  @include vp-1023 {
+    margin-top: 29px;
+  }
 
   &__content {
     max-width: 450px;
@@ -11,6 +16,13 @@
       letter-spacing: -0.02em;
       color: $dodger-blue;
       margin: 0;
+
+      @include vp-1023 {
+        font-size: 48px;
+        line-height: 100%;
+        color: $color-default-white;
+        min-height: 393px;
+      }
     }
 
     p {
@@ -20,11 +32,21 @@
       letter-spacing: -0.01em;
       color: $nero;
       margin: 40px 0 0;
+
+      @include vp-1023 {
+        font-size: 18px;
+        line-height: 135%;
+        letter-spacing: -0.02em;
+      }
     }
   }
 
   &__form {
     margin-top: 39px;
+
+    @include vp-1023 {
+      margin-top: 22px;
+    }
   }
 
   & &__toggle {
