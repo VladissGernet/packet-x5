@@ -34,16 +34,22 @@
   }
 
   &__ellipse {
-    right: 0;
-    width: 1440px;
-    height: 900px;
+    top: -156px;
+    right: -98px;
 
-    picture {
-      display: block;
+    img {
+      width: 998px;
+      height: 978px;
     }
 
     @include vp-1279 {
-      width: 100%;
+      top: -120px;
+      right: -60px;
+
+      img {
+        width: 65vw;
+        height: unset;
+      }
     }
 
     @include vp-1023 {
@@ -64,13 +70,6 @@
         z-index: -1;
         background-color: $summer-sky;
         box-shadow: 0 0 70px 82px $summer-sky;
-      }
-
-      // Исправляю глюк картинки
-      width: calc(100% + 1px);
-
-      img {
-        height: 572px;
       }
     }
 
