@@ -4,6 +4,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeader} from './modules/header/header';
 import {initHero} from './modules/hero/hero';
+import {initParticipate} from './modules/participate/participate';
 
 // ---------------------------------
 
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     initHeader();
     initHero();
+    initParticipate();
   });
 });
 

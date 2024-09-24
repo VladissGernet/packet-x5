@@ -31,6 +31,18 @@
 
   &__content {
     margin-left: auto;
+    transition: all $trans-default;
+    opacity: 0;
+    transform: translateY(100%);
+
+    @include vp-767 {
+      transform: translateY(50%);
+    }
+
+    &.js-participate-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     h2 {
       font-size: 48px;
@@ -82,6 +94,12 @@
     position: absolute;
     top: -80px;
     left: -50px;
+    transition: all $trans-default;
+    transform: scale(0);
+
+    &.js-participate-image {
+      transform: scale(1);
+    }
 
     @include vp-1023 {
       top: -70px;
