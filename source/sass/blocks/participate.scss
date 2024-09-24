@@ -1,9 +1,37 @@
 .participate {
-  &__wrapper {
+  margin-top: 169px;
+  min-height: 697px;
 
+  @include vp-1023 {
+    margin-top: 100px;
+  }
+
+  @include vp-767 {
+    margin-top: 34px;
+  }
+
+  &__wrapper {
+    padding: 80px 40px 92px 570px;
+    background-color: $color-default-white;
+    border-radius: 40px;
+    position: relative;
+
+    @include vp-1279 {
+      padding-right: 20px;
+    }
+
+    @include vp-1023 {
+      padding: 0 0 0 420px;
+    }
+
+    @include vp-767 {
+      padding: 0;
+    }
   }
 
   &__content {
+    margin-left: auto;
+
     h2 {
       font-size: 48px;
       font-weight: 700;
@@ -11,6 +39,18 @@
       letter-spacing: -0.02em;
       color: $nero;
       margin: 0;
+
+      @include vp-1279 {
+        font-size: 40px;
+      }
+
+      @include vp-1023 {
+        font-size: 36px;
+      }
+
+      @include vp-767 {
+        font-size: 32px;
+      }
     }
 
     p {
@@ -19,14 +59,47 @@
       line-height: 32px;
       letter-spacing: -0.01em;
       color: $nero;
-      margin: 0;
+      margin: 20px 0 0;
+
+      @include vp-1279 {
+        font-size: 20px;
+      }
+
+      @include vp-1023 {
+        font-size: 18px;
+      }
+
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 135%;
+        letter-spacing: -0.02em;
+        margin-top: 24px;
+      }
     }
   }
 
   &__image {
+    position: absolute;
+    top: -80px;
+    left: -50px;
+
+    @include vp-1023 {
+      top: -70px;
+      left: -6px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+
     img {
       width: 634px;
       height: 697px;
+
+      @include vp-1023 {
+        width: 444px;
+        height: 488px;
+      }
     }
   }
 }
