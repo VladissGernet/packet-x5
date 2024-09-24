@@ -1,6 +1,8 @@
 .hero {
   margin-top: 40px;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 
   @include vp-1023 {
     margin-top: 29px;

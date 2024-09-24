@@ -1,6 +1,9 @@
 .header {
   padding-top: 53px;
   position: relative;
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
 
   @include vp-1023 {
     padding-top: 10px;
