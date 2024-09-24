@@ -1,10 +1,77 @@
 .prize-draw {
+  h2, h3, span, h4, p {
+    letter-spacing: -0.02em;
+  }
+
+  h2, h3, span, h4 {
+    font-weight: 700;
+  }
+
+  h2, h4, p {
+    color: $nero;
+  }
+
   h2 {
     font-size: 48px;
-    font-weight: 700;
     line-height: 100%;
-    letter-spacing: -0.02em;
-    color: $nero;
     margin: 0;
+  }
+
+  // Reset списков.
+  &__list, &__sub-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding: 32px;
+    background-color: $color-default-white;
+    border-radius: 40px;
+
+    h3 {
+      font-size: 32px;
+      line-height: 120%;
+      margin: 0;
+      max-width: 159px;
+    }
+  }
+
+  &__sub-item {
+    padding: 15px;
+    width: 156px;
+    border-radius: 12px;
+    background-image: linear-gradient(162.67deg, rgb(166, 247, 99) -12.978%,rgb(255, 255, 255) 99.197%);
+
+    h4 {
+      font-size: 16px;
+      line-height: 126%;
+      margin: 0;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+  }
+
+  &__sub-header {
+    svg {
+      border-radius: 4px;
+      background-color: $color-default-white;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 126%;
+    }
   }
 }
