@@ -1,6 +1,6 @@
 .participate {
   margin-top: 169px;
-  min-height: 697px;
+  min-height: 460px;
 
   @include vp-1023 {
     margin-top: 100px;
@@ -15,6 +15,7 @@
     background-color: $color-default-white;
     border-radius: 40px;
     position: relative;
+    z-index: -2;
 
     @include vp-1279 {
       padding-right: 20px;
@@ -96,6 +97,7 @@
     left: -50px;
     transition: all $trans-default;
     transform: scale(0);
+    z-index: -1;
 
     &.js-participate-image {
       transform: scale(1);
