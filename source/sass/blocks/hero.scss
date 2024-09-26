@@ -22,6 +22,7 @@
       letter-spacing: -0.02em;
       color: $dodger-blue;
       margin: 0;
+      word-break: break-word;
 
       @include vp-1279 {
         font-size: 40px;

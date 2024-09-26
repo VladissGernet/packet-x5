@@ -1,15 +1,24 @@
 .prize-draw {
   margin-top: 80px;
 
-  h2, h3, span, h4, p {
+  h2,
+  h3,
+  span,
+  h4,
+  p {
     letter-spacing: -0.02em;
   }
 
-  h2, h3, span, h4 {
+  h2,
+  h3,
+  span,
+  h4 {
     font-weight: 700;
   }
 
-  h2, h4, p {
+  h2,
+  h4,
+  p {
     color: $nero;
   }
 
@@ -20,7 +29,9 @@
   }
 
   // Reset списков.
-  &__list, &__sub-list {
+  &__list,
+  &__sub-list {
+    word-break: break-word;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -75,7 +86,8 @@
     background-image: linear-gradient(163deg, $conifer 0%, $color-default-white 100%);
     position: relative;
 
-    h4, p {
+    h4,
+    p {
       position: relative;
       z-index: 1;
     }
@@ -95,10 +107,10 @@
 
     img {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      right: 0;
+      width: 156px;
+      height: 204px;
     }
   }
 

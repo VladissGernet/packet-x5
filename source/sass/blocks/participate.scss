@@ -52,6 +52,7 @@
       letter-spacing: -0.02em;
       color: $nero;
       margin: 0;
+      word-break: break-word;
 
       @include vp-1279 {
         font-size: 40px;
