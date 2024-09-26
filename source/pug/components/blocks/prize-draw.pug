@@ -1,12 +1,12 @@
 -
   const listItems = [
       {
-        title: "Меньше 3 месяцев",
+        title: "Меньше 3&nbsp;месяцев",
         titleColor: "viking",
         subItems: [
           {
             backgroundColor: "conifer",
-            title: "3000 баллов «X5 Клуба»",
+            title: "3000 баллов «X5&nbsp;Клуба»",
             description: "Меньше 3 месяцев",
             icon: "x5",
             infoIcon: "false",
@@ -33,7 +33,7 @@
           },
           {
             backgroundColor: "pale-turquoise",
-            title: "3000 баллов «X5 Клуба»",
+            title: "3000 баллов «X5&nbsp;Клуба»",
             description: "От 3 до 6 месяцев",
             icon: "x5",
             infoIcon: "false",
@@ -45,13 +45,13 @@
         ]
       },
       {
-        title: "Больше 6 месяцев",
+        title: "Больше 6&nbsp;месяцев",
         titleColor: "picton-blue",
         subItems: [
           {
             backgroundColor: "fog",
             title: "Яндекс Станции Мини",
-            description: "Больше 6 месяцев",
+            description: "Больше<br>6 месяцев",
             icon: "citylink",
             infoIcon: "true",
             infoSpan: "false",
@@ -60,7 +60,7 @@
           },
           {
             backgroundColor: "columbia-blue",
-            title: "3000 баллов «X5 Клуба»",
+            title: "3000 баллов «X5&nbsp;Клуба»",
             description: "Больше 6 месяцев",
             icon: "x5",
             infoIcon: "false",
@@ -79,7 +79,7 @@ mixin prize-draw-list()
   ul.prize-draw__list
     each item in listItems
       li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
-        h3= item.title
+        h3!= item.title
         ul.prize-draw__sub-list
           each subItem in item.subItems
             li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`)
@@ -91,8 +91,8 @@ mixin prize-draw-list()
                 header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`)
                   +icon(subItem.icon, 104, 24)
                   +icon("info", 24, 24)
-              h4= subItem.title
-              p= subItem.description
+              h4!= subItem.title
+              p!= subItem.description
               +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")
 
 mixin prize-draw()
