@@ -114,18 +114,33 @@
   }
 
   &__sub-header {
-    z-index: 1;
     position: relative;
+    z-index: 1;
 
-    svg {
+    svg:first-child {
       border-radius: 4px;
       background-color: $color-default-white;
     }
 
-    span {
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 126%;
+    &--short-icon {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+
+      span {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 126%;
+      }
+    }
+
+    &--long-icon {
+      svg:last-child {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
     }
   }
 

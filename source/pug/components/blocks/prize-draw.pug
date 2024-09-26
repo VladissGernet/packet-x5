@@ -46,46 +46,27 @@
       },
     ]
 
-//- Внутренний элемент карточки.
-
-mixin prize-draw-sub-item(subItem)
-  if subItem.infoIcon === "false"
-    header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`)
-      +icon("x5", 28, 24)
-      span= subItem.spanText
-  else
-    header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`)
-      +icon(subItem.icon, 104, 24)
-      +icon("info", 24, 24)
-  h4= subItem.title
-  p= subItem.description
-  +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")
-
-//- Элемент карточки.
-
-mixin prize-draw-item(item)
-  h3= item.title
-  ul.prize-draw__sub-list
-    each subItem in item.subItems
-      if subItem.backgroundColor
-        li.prize-draw__sub-item(class=`prize-draw__sub-item--bc-${subItem.backgroundColor}`)
-          +prize-draw-sub-item(subItem)
-      else
-        li.prize-draw__sub-item
-          +prize-draw-sub-item(subItem)
-
 //- Список карточек.
 
 mixin prize-draw-list()
   ul.prize-draw__list
     each item in listItems
-      if item.titleColor
-        li.prize-draw__item(class=`prize-draw__item--title-${item.titleColor}`)
-          +prize-draw-item(item)
-      else
-        li.prize-draw__item
-          +prize-draw-item(item)
-
+      li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
+        h3= item.title
+        ul.prize-draw__sub-list
+          each subItem in item.subItems
+            li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`)
+              if subItem.infoIcon === "false"
+                header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`)
+                  +icon("x5", 28, 24)
+                  span= subItem.spanText
+              else
+                header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`)
+                  +icon(subItem.icon, 104, 24)
+                  +icon("info", 24, 24)
+              h4= subItem.title
+              p= subItem.description
+              +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")
 
 mixin prize-draw()
   section.prize-draw
