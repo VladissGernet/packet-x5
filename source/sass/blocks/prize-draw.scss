@@ -122,6 +122,8 @@
     mint-tulip: $mint-tulip,
     fog: $fog,
     columbia-blue: $columbia-blue,
+    classic-rose: $classic-rose,
+    lavender-blue: $lavender-blue,
   );
 
   @each $color-name, $color-value in $background-colors {

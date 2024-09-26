@@ -1,5 +1,5 @@
 -
-  const listItems = [
+  const listItemsWednesday = [
       {
         title: "Меньше 3&nbsp;месяцев",
         titleColor: "viking",
@@ -72,10 +72,67 @@
         ]
       },
     ]
+      const listItemsSeptember = [
+      {
+        title: "От 3 до 6 месяцев",
+        titleColor: "viking",
+        subItems: [
+          {
+            backgroundColor: "classic-rose",
+            title: "Телевизоры 65”",
+            description: "От 3 до 6<br>месяцев",
+            icon: "citylink",
+            infoIcon: "true",
+            infoSpan: "false",
+            spanText: "",
+            spanColor: "",
+            image: "tv",
+          },
+          {
+            backgroundColor: "pale-turquoise",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "От 3 до 6 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "pelorous",
+            image: "offer-x5-2",
+          },
+        ]
+      },
+      {
+        title: "От 3 до 6 месяцев",
+        titleColor: "picton-blue",
+        subItems: [
+          {
+            backgroundColor: "lavender-blue",
+            title: "Пылесосы",
+            description: "Больше 6 месяцев",
+            icon: "citylink",
+            infoIcon: "true",
+            infoSpan: "false",
+            spanText: "",
+            image: "hoover",
+          },
+          {
+            backgroundColor: "columbia-blue",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "Больше 6 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "picton-blue-2",
+            image: "offer-x5-3",
+          },
+        ]
+      },
+    ]
 
 //- Список карточек.
 
-mixin prize-draw-list()
+mixin prize-draw-list(listItems)
   ul.prize-draw__list
     each item in listItems
       li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
@@ -100,4 +157,5 @@ mixin prize-draw()
     .container
       h2
         | Разыгрываем каждую среду
-      +prize-draw-list()
+      +prize-draw-list(listItemsWednesday)
+      +prize-draw-list(listItemsSeptember)
