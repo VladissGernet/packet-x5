@@ -44,6 +44,22 @@
     }
   }
 
+  // Цвета для главного заголовка карточки.
+
+  $title-colors: (
+    viking: $viking,
+    picton-blue: $picton-blue,
+    cornflower-blue: $cornflower-blue
+  );
+
+  @each $color-name, $color-value in $title-colors {
+    &__item--title-#{$color-name} {
+      h3 {
+        color: $color-value;
+      }
+    }
+  }
+
   &__sub-list {
     margin-top: 24px;
     gap: 30px;
@@ -54,7 +70,7 @@
     width: 156px;
     min-height: 204px;
     border-radius: 12px;
-    background-image: linear-gradient(163deg, #a6f663 0%, $color-default-white 100%);
+    background-image: linear-gradient(163deg, $conifer 0%, $color-default-white 100%);
     position: relative;
 
     h4, p {
@@ -83,6 +99,20 @@
     }
   }
 
+  // Цвет фона для внутреннего элемента карточки.
+
+  $background-colors: (
+    conifer: $conifer,
+    pale-turquoise: $pale-turquoise,
+    mint-tulip: $mint-tulip
+  );
+
+  @each $color-name, $color-value in $background-colors {
+    &__sub-item--bc-#{$color-name} {
+      background-image: linear-gradient(163deg, $color-value 0%, $color-default-white 100%);
+    }
+  }
+
   &__sub-header {
     z-index: 1;
     position: relative;
@@ -96,6 +126,19 @@
       font-size: 16px;
       font-weight: 700;
       line-height: 126%;
+    }
+  }
+
+  $sub-title-colors: (
+    limeade: $limeade,
+    pelorous: $pelorous,
+  );
+
+  @each $color-name, $color-value in $sub-title-colors {
+    &__sub-header--span-color-#{$color-name} {
+      span {
+        color: $color-value;
+      }
     }
   }
 }

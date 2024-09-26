@@ -2,24 +2,27 @@
   const listItems = [
       {
         title: "Меньше 3 месяцев",
-        color: "maya-blue",
+        titleColor: "viking",
         subItems: [
           {
+            backgroundColor: "conifer",
             title: "3000 баллов «X5 Клуба»",
             description: "Меньше 3 месяцев",
             icon: "x5",
             infoIcon: "false",
             infoSpan: "true",
             spanText: "300 призов",
+            spanColor: "limeade",
             image: "offer-x5-1",
           },
         ]
       },
       {
         title: "От 3 до 6 месяцев",
-        color: "maya-blue",
+        titleColor: "picton-blue",
         subItems: [
           {
+            backgroundColor: "mint-tulip",
             title: "Чайники",
             description: "От 3 до 6 месяцев",
             icon: "citylink",
@@ -29,37 +32,64 @@
             image: "kettle",
           },
           {
+            backgroundColor: "pale-turquoise",
             title: "3000 баллов «X5 Клуба»",
             description: "От 3 до 6 месяцев",
-            icon: "citylink",
-            infoIcon: "true",
-            infoSpan: "false",
-            spanText: "",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "pelorous",
             image: "offer-x5-2",
           },
         ]
       },
     ]
 
+//- Внутренний элемент карточки.
+
+mixin prize-draw-sub-item(subItem)
+  if subItem.infoIcon === "false"
+    header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`)
+      +icon("x5", 28, 24)
+      span= subItem.spanText
+  else
+    header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`)
+      +icon(subItem.icon, 104, 24)
+      +icon("info", 24, 24)
+  h4= subItem.title
+  p= subItem.description
+  +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")
+
+//- Элемент карточки.
+
+mixin prize-draw-item(item)
+  h3= item.title
+  ul.prize-draw__sub-list
+    each subItem in item.subItems
+      if subItem.backgroundColor
+        li.prize-draw__sub-item(class=`prize-draw__sub-item--bc-${subItem.backgroundColor}`)
+          +prize-draw-sub-item(subItem)
+      else
+        li.prize-draw__sub-item
+          +prize-draw-sub-item(subItem)
+
+//- Список карточек.
+
+mixin prize-draw-list()
+  ul.prize-draw__list
+    each item in listItems
+      if item.titleColor
+        li.prize-draw__item(class=`prize-draw__item--title-${item.titleColor}`)
+          +prize-draw-item(item)
+      else
+        li.prize-draw__item
+          +prize-draw-item(item)
+
+
 mixin prize-draw()
   section.prize-draw
     .container
       h2
         | Разыгрываем каждую среду
-      ul.prize-draw__list
-        each item in listItems
-          li.prize-draw__item
-            h3= item.title
-            ul.prize-draw__sub-list
-              each subItem in item.subItems
-                li.prize-draw__sub-item
-                  header.prize-draw__sub-header
-                    if subItem.infoIcon === "false"
-                      +icon("x5", 28, 24)
-                      span= subItem.spanText
-                    else
-                      +icon(subItem.icon, 104, 24)
-                      +icon("info", 24, 24)
-                  h4= subItem.title
-                  p= subItem.description
-                  +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")
+      +prize-draw-list()
