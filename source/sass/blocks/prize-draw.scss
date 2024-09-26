@@ -104,7 +104,9 @@
   $background-colors: (
     conifer: $conifer,
     pale-turquoise: $pale-turquoise,
-    mint-tulip: $mint-tulip
+    mint-tulip: $mint-tulip,
+    fog: $fog,
+    columbia-blue: $columbia-blue,
   );
 
   @each $color-name, $color-value in $background-colors {
@@ -144,9 +146,12 @@
     }
   }
 
+  // Цвет текста для подзаголовка карточки.
+
   $sub-title-colors: (
     limeade: $limeade,
     pelorous: $pelorous,
+    picton-blue-2: $picton-blue-2,
   );
 
   @each $color-name, $color-value in $sub-title-colors {
