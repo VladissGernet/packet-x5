@@ -1,11 +1,39 @@
+//- Пример данных
+//- -
+//-   const prizeDrawExample = {
+//-     blockTitle: "Разыгрываем в&nbsp;сентябре",
+//-     list: [
+//-       {
+//-         itemTitle: "От 3 до 6 месяцев",
+//-         titleColor: "viking",
+//-         subItems: [
+//-           {
+//-             backgroundColor: "classic-rose",
+//-             subItemTitle: "Телевизоры 65”",
+//-             description: "От 3 до 6<br>месяцев",
+//-             icon: "citylink",
+//-             infoIcon: "true",
+//-             infoSpan: "false",
+//-             spanText: "",
+//-             spanColor: "",
+//-             image: "tv",
+//-           },
+//-         ]
+//-       },
+//-     ]
+//-   }
+
+//- Необходимо добавить цвета в prize-draw.scss для: titleColor, backgroundColor, spanColor.
+//- Можно найти по ключевым словам.
+
 mixin prize-draw(data, modClass = "")
   section.prize-draw(class=modClass)
     .container
-      h2!= data.title
+      h2!= data.blockTitle
       ul.prize-draw__list
         each item in data.list
           li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
-            h3!= item.title
+            h3!= item.itemTitle
             ul.prize-draw__sub-list
               each subItem in item.subItems
                 li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`)
@@ -17,6 +45,6 @@ mixin prize-draw(data, modClass = "")
                     header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`)
                       +icon(subItem.icon, 104, 24)
                       +icon("info", 24, 24)
-                  h4!= subItem.title
+                  h4!= subItem.subItemTitle
                   p!= subItem.description
                   +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")

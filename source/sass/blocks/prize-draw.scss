@@ -1,3 +1,6 @@
+//- Необходимо добавить цвета в prize-draw.pug для: titleColor, backgroundColor, spanColor.
+//- Можно найти по ключевым словам.
+
 .prize-draw {
   margin-top: 80px;
   word-break: break-word;
@@ -120,7 +123,7 @@
     }
   }
 
-  // Цвета для главного заголовка карточки.
+  // Цвета для главного заголовка карточки titleColor.
 
   $title-colors: (
     viking: $viking,
@@ -182,7 +185,7 @@
     }
   }
 
-  // Цвет фона для внутреннего элемента карточки.
+  // Цвет фона для внутреннего элемента карточки backgroundColor.
 
   $background-colors: (
     conifer: $conifer,
@@ -235,7 +238,7 @@
     }
   }
 
-  // Цвет текста для подзаголовка карточки.
+  // Цвет текста для подзаголовка карточки spanColor.
 
   $sub-title-colors: (
     limeade: $limeade,

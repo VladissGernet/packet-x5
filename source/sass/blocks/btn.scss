@@ -18,27 +18,6 @@
 
   position: relative;
 
-  &--submit {
-    min-width: 327px;
-    padding-left: 70px;
-    padding-right: 70px;
-
-    @include vp-1023 {
-      min-width: unset;
-      width: 100%;
-      max-width: 340px;
-
-      &.js-submit-activated {
-        color: $color-default-white;
-
-        &::after {
-          // По ТЗ должно быть 80% закрашено, но по PixelPerfect необходимо 92% закрасить.
-          transform: translateX(-8%);
-        }
-      }
-    }
-  }
-
   &::before,
   &::after {
     position: absolute;

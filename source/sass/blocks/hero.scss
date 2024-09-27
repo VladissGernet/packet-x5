@@ -81,21 +81,12 @@
     }
   }
 
-  &__form {
+  &__agreement {
     margin-top: 39px;
 
     @include vp-1023 {
       margin: 22px auto 0;
       max-width: 327px;
     }
-  }
-
-  & &__toggle {
-    padding: 0;
-    display: inline;
-  }
-
-  &__submit {
-    margin-top: 14px;
   }
 }

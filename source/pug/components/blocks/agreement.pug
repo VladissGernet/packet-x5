@@ -1,0 +1,10 @@
+mixin agreement(formClass= "")
+  form.agreement(class=formClass, method="post", enctype="multipart/form-data", action="#", autocomplete="off")
+    +custom-toggle({
+      inputLabel: "Я согласен на",
+      inputName: "user-agreement",
+      inputValue: "true",
+      inputChecked: false
+    }).custom-toggle--radio.agreement__toggle
+    +link({text: "участие в акции"})
+    +btn({text: "Принять участие", type: "submit"}).agreement__submit(disabled)
