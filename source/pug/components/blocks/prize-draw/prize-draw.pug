@@ -1,7 +1,7 @@
 mixin prize-draw(data, modClass = "")
   section.prize-draw(class=modClass)
     .container
-      h2=data.title
+      h2!= data.title
       ul.prize-draw__list
         each item in data.list
           li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
