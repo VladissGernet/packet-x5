@@ -1,0 +1,80 @@
+-
+  const prizeDrawWednesday = {
+    title: "Разыгрываем каждую среду",
+    list: [
+      {
+        title: "Меньше 3&nbsp;месяцев",
+        titleColor: "viking",
+        subItems: [
+          {
+            backgroundColor: "conifer",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "Меньше 3 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "limeade",
+            image: "offer-x5-1",
+          },
+        ]
+      },
+      {
+        title: "От 3 до 6 месяцев",
+        titleColor: "picton-blue",
+        subItems: [
+          {
+            backgroundColor: "mint-tulip",
+            title: "Чайники",
+            description: "От 3 до 6 месяцев",
+            icon: "citylink",
+            infoIcon: "true",
+            infoSpan: "false",
+            spanText: "",
+            image: "kettle",
+          },
+          {
+            backgroundColor: "pale-turquoise",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "От 3 до 6 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "pelorous",
+            image: "offer-x5-2",
+          },
+        ]
+      },
+      {
+        title: "Больше 6&nbsp;месяцев",
+        titleColor: "picton-blue",
+        subItems: [
+          {
+            backgroundColor: "fog",
+            title: "Яндекс Станции Мини",
+            description: "Больше<br>6 месяцев",
+            icon: "citylink",
+            infoIcon: "true",
+            infoSpan: "false",
+            spanText: "",
+            image: "speaker",
+          },
+          {
+            backgroundColor: "columbia-blue",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "Больше 6 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "picton-blue-2",
+            image: "offer-x5-3",
+          },
+        ]
+      },
+    ]
+  }
+
+mixin prize-draw-wednesday()
+  +prize-draw(prizeDrawWednesday)

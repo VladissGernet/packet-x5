@@ -1,0 +1,64 @@
+-
+  const prizeDrawSeptember = {
+    title: "Разыгрываем в сентябре",
+    list: [
+      {
+        title: "От 3 до 6 месяцев",
+        titleColor: "viking",
+        subItems: [
+          {
+            backgroundColor: "classic-rose",
+            title: "Телевизоры 65”",
+            description: "От 3 до 6<br>месяцев",
+            icon: "citylink",
+            infoIcon: "true",
+            infoSpan: "false",
+            spanText: "",
+            spanColor: "",
+            image: "tv",
+          },
+          {
+            backgroundColor: "pale-turquoise",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "От 3 до 6 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "pelorous",
+            image: "offer-x5-2",
+          },
+        ]
+      },
+      {
+        title: "Больше 6&nbsp;месяцев",
+        titleColor: "picton-blue",
+        subItems: [
+          {
+            backgroundColor: "lavender-blue",
+            title: "Пылесосы",
+            description: "Больше 6 месяцев",
+            icon: "citylink",
+            infoIcon: "true",
+            infoSpan: "false",
+            spanText: "",
+            image: "hoover",
+          },
+          {
+            backgroundColor: "columbia-blue",
+            title: "3000 баллов «X5&nbsp;Клуба»",
+            description: "Больше 6 месяцев",
+            icon: "x5",
+            infoIcon: "false",
+            infoSpan: "true",
+            spanText: "300 призов",
+            spanColor: "picton-blue-2",
+            image: "offer-x5-3",
+          },
+        ]
+      },
+    ]
+  }
+
+mixin prize-draw-september()
+  +prize-draw(prizeDrawSeptember, "prize-draw--september")
