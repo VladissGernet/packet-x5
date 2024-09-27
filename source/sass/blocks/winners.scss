@@ -1,0 +1,61 @@
+.winners {
+  margin-top: 50px;
+
+  &__agreement {
+    width: 328px;
+    margin: 0 auto;
+  }
+
+  &__field {
+    width: 285px;
+    margin: 0 auto;
+
+    // подгонка к pixelperfect
+    transform: translateX(-2px);
+  }
+
+  &__content {
+    margin-top: 32px;
+    border-radius: 40px;
+    background-color: $color-default-white;
+    padding: 60px 40px 70px 38px;
+    position: relative;
+    overflow: hidden;
+
+    img:first-of-type {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 633px;
+      height: 100%;
+    }
+
+    img:last-of-type {
+      position: absolute;
+      top: 18px;
+      right: 96px;
+      width: 357px;
+      height: 280px;
+    }
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: $nero;
+    margin: 0;
+    width: 417px;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__button {
+    display: block;
+    z-index: 1;
+    max-width: 327px;
+    margin-top: 40px;
+    text-align: center;
+  }
+}

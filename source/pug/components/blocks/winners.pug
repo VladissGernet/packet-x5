@@ -1,0 +1,9 @@
+mixin winners()
+  section.winners
+    .container
+      +agreement("winners__agreement", "winners__field")
+      .winners__content
+        h2!= "Узнайте, кто&nbsp;уже&nbsp;победил"
+        +btn({href: "#", text: "Итоги розыгрыша"}).winners__button
+        +img("content/winners", "gradient", "jpg", "633", "316", "")
+        +img("content/winners", "cup", "png", "357", "280", "")
