@@ -34,4 +34,28 @@
       }
     }
   }
+
+  &--secondary {
+    color: $fiord;
+
+    &::before {
+      background-color: $fiord;
+    }
+
+    @include hover-focus {
+      color: $nobel;
+
+      &::before {
+        background-color: $nobel;
+      }
+
+      &:active {
+        color: $nero;
+
+        &::before {
+          background-color: $nero;
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,58 @@
 .footer {
-  padding: 40px 0;
+  margin-top: 50px;
+  margin-bottom: 100px;
 
-  background-color: $dodger-blue;
+  &__column {
+    & > svg {
+      width: 78px;
+      height: 72px;
+      transform: translate(-11px, -16px);
+    }
+  }
+
+  &__content {
+    padding: 32px 30px 40px;
+    border-radius: 40px;
+    background-color: $color-default-white;
+    display: flex;
+  }
+
+  &__column {
+    &--links {
+      margin-left: 298px;
+    }
+  }
+
+  &__copyright {
+    margin-top: 46px;
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      color: $fiord;
+      margin: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 73px;
+  }
+
+  &__link {
+    font-size: 16px;
+    letter-spacing: 0;
+
+    &:not(:last-of-type) {
+      margin-bottom: 11px;
+    }
+
+    &::before {
+      bottom: 4px;
+    }
+  }
 }

@@ -90,7 +90,7 @@
     border-radius: 40px;
 
     @include vp-1023 {
-      background-image: linear-gradient(153deg, $alice-blue 0%, $color-default-white 100%);
+      background-image: linear-gradient(153deg, $alice-blue-2 0%, $color-default-white 100%);
     }
 
     @include vp-767 {

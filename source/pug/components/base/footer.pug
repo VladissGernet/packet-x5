@@ -1,5 +1,22 @@
+-
+  const links = {
+    "Политика конфиденциальности": "#",
+    "Пользовательское соглашение": "#",
+    "Правила акции": "#"
+  }
+
 mixin footer(footerMods)
   footer.footer(class=footerMods)
     .container
-      p
-        | © 2021. Пакет X5.
+      .footer__content
+        .footer__column
+          +icon("x5", 78, 72)
+          .footer__copyright
+            p
+              | © 2021–2023
+              br
+              | ООО «Корпоративный центр ИКС 5»
+        .footer__column.footer__column--links
+          .footer__links
+            each linkHref, linkName in links
+              +link({text: linkName, href: linkHref}).link--secondary.footer__link
