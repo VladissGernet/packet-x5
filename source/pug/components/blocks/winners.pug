@@ -5,5 +5,11 @@ mixin winners()
       .winners__content
         h2!= "Узнайте, кто&nbsp;уже&nbsp;победил"
         +btn({href: "#", text: "Итоги розыгрыша"}).winners__button
-        +img("content/winners", "gradient", "jpg", "633", "316", "")
-        +img("content/winners", "cup", "png", "357", "280", "")
+        .winners__gradient
+          picture
+            source(type="image/jpg", media="(max-width: 1023px)", srcset="img/content/winners/gradient-mobile.jpg 1x, img/content/winners/gradient-mobile@2x.jpg 2x")
+            img(src="img/content/winners/gradient.jpg", srcset="img/content/winners/gradient@2x.jpg 2x", width="633", height="316", alt="")
+        .winners__cup
+          picture
+            source(type="image/jpg", media="(max-width: 1023px)", srcset="img/content/winners/cup-mobile.png 1x, img/content/winners/cup-mobile@2x.png 2x")
+            img(src="img/content/winners/cup.png", srcset="img/content/winners/cup@2x.png 2x", width="357", height="280", alt="")
