@@ -43,6 +43,7 @@
       border-radius: 0;
       padding-right: 20px;
       padding-left: 20px;
+      padding-bottom: 47px;
       background-color: transparent;
     }
 
@@ -110,9 +111,12 @@
       z-index: -1;
     }
 
+    @include vp-767 {
+      min-height: 257px;
+    }
+
     @include vp-424 {
       border-radius: 20px 20px 0 0;
-      min-height: 257px;
     }
 
     img {
