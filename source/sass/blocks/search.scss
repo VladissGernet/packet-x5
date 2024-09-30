@@ -1,0 +1,63 @@
+.search {
+  background-color: $color-default-white;
+  border-radius: 40px;
+  padding: 32px;
+  display: inline-block;
+  word-wrap: break-word;
+
+  label {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: $nero;
+  }
+
+  &__field {
+    position: relative;
+
+    input {
+      display: block;
+      padding: 25px;
+      border: none;
+      background-color: $alice-blue-3;
+      border-radius: 20px;
+      width: 476px;
+      margin-top: 20px;
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: $cornflower-blue;
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all $trans-default;
+
+      @include hover-focus {
+        color: $summer-sky;
+
+        &:active {
+          color: $navy-blue;
+        }
+      }
+
+      &:active {
+        color: $navy-blue;
+      }
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 135%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: $nobel;
+    margin: 20px 0 0;
+  }
+}
