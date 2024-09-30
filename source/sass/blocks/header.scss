@@ -187,4 +187,16 @@
       opacity: 0.8;
     }
   }
+
+  &--winners {
+    .header__ellipse {
+      top: -156px;
+      right: -146px;
+    }
+
+    .header__background-image {
+      top: 1px;
+      right: 96px;
+    }
+  }
 }
