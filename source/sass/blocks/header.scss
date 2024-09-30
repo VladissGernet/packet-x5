@@ -192,11 +192,21 @@
     .header__ellipse {
       top: -156px;
       right: -146px;
+
+      @include vp-1023 {
+        top: 0;
+        right: 50%;
+      }
     }
 
     .header__background-image {
       top: 1px;
       right: 96px;
+
+      @include vp-1023 {
+        top: 134px;
+        right: 50%;
+      }
     }
   }
 }

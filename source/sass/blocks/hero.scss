@@ -95,5 +95,64 @@
 
   &__search {
     margin-top: 45px;
+
+    @include vp-1023 {
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+      background-color: transparent;
+      max-width: 370px;
+
+      label {
+        font-size: 28px;
+        display: block;
+        text-align: center;
+      }
+
+      input {
+        width: 100%;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 60px;
+      }
+
+      button {
+        right: 10px;
+        top: 0;
+      }
+    }
+
+    @include vp-767 {
+      width: 100%;
+    }
+
+    @include vp-424 {
+      margin-top: 22px;
+
+      label {
+        font-size: 24px;
+        text-align: left;
+      }
+
+      input {
+        margin-top: 14px;
+      }
+
+      button {
+        right: 6px;
+        top: 2px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      p {
+        margin-top: 16px;
+        text-align: left;
+      }
+    }
   }
 }
