@@ -156,6 +156,10 @@ export class CustomSelect {
     if (!target.closest('.custom-select')) {
       this._closeSelect();
     }
+
+    if (target.classList.contains('custom-select') && target.classList.contains('is-open')) {
+      this._closeSelect();
+    }
   }
 
   _onEscapePress(evt) {

@@ -1,3 +1,14 @@
+-
+  const optionsListItems = [
+    {text: "02.08.23 — первый розыгрыш", value: "id-1", isActive: true},
+    {text: "09.08.23 — второй розыгрыш", value: "id-2"},
+    {text: "16.08.23 — третий розыгрыш", value: "id-3"},
+    {text: "23.08.23 — четвертый розыгрыш", value: "id-4"},
+    {text: "30.08.23 — пятый розыгрыш", value: "id-5"},
+    {text: "07.09.23 — шестой розыгрыш", value: "id-6"},
+    {text: "14.09.23 — седьмой розыгрыш", value: "id-7"}
+  ]
+
 mixin winners-table()
   section.winners.winners--table
     .container
@@ -7,13 +18,16 @@ mixin winners-table()
         +btn({text: "Розыгрыш в сентябре"}).btn--secondary.winners__button
       +custom-select({
         error: "Выберите дату розыгрыша",
-        optionsList: [
-          {text: "02.08.23 — первый розыгрыш", value: "id-1", isActive: true},
-          {text: "09.08.23 — второй розыгрыш", value: "id-2"},
-          {text: "16.08.23 — третий розыгрыш", value: "id-3"},
-          {text: "23.08.23 — четвертый розыгрыш", value: "id-4"},
-          {text: "30.08.23 — пятый розыгрыш", value: "id-5"},
-          {text: "07.09.23 — шестой розыгрыш", value: "id-6"},
-          {text: "14.09.23 — седьмой розыгрыш", value: "id-7"}
-        ]
+        optionsList: optionsListItems
       })(class="winners__select", data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1")
+      table
+        thead
+            tr
+                th Имя
+                th Телефон
+                th Приз
+        tbody
+            tr
+                td Вия
+                td 7XXXXXX8473
+                td Сертификат на покупки в «Пятёрочке»
