@@ -4,7 +4,7 @@ mixin winners-table()
       h2 Список победителей
       .winners__buttons
         +btn({text: "Еженедельные"}).btn--secondary.winners__button
-        +btn({text: "Розыгрыш в сентябре"}).btn--tertiary.winners__button
+        +btn({text: "Розыгрыш в сентябре"}).btn--secondary.winners__button
       +custom-select({
         error: "Выберите дату розыгрыша",
         optionsList: [

@@ -74,17 +74,26 @@
     }
   }
 
-  &--secondary,
-  &--tertiary {
+  &--secondary {
     color: $cornflower-blue;
     background-color: $color-default-white;
 
     &::before {
+      transition: all $trans-default;
+      background-image: linear-gradient(155deg, $pattens-blue 0%, $color-default-white 100%);
+      opacity: 0;
+    }
+
+    &::after {
       display: none;
     }
-  }
 
-  &--secondary {
-    background-image: linear-gradient(155deg, $pattens-blue 0%, $color-default-white 100%);
+    @include hover-focus {
+      color: $cornflower-blue;
+
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 }
