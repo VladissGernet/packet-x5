@@ -1,10 +1,10 @@
-mixin winners()
+mixin winners-index()
   section.winners
     .container
       +agreement("winners__agreement", "winners__field")
       .winners__content
         h2!= "Узнайте, кто&nbsp;уже&nbsp;победил"
-        +btn({href: "#", text: "Итоги розыгрыша"}).winners__button
+        +btn({href: "winners.html", text: "Итоги розыгрыша"}).winners__button
         .winners__gradient
           picture
             source(type="image/jpg", media="(max-width: 1023px)", srcset="img/content/winners/gradient-mobile.jpg 1x, img/content/winners/gradient-mobile@2x.jpg 2x")

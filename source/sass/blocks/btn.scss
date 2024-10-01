@@ -73,4 +73,18 @@
       }
     }
   }
+
+  &--secondary,
+  &--tertiary {
+    color: $cornflower-blue;
+    background-color: $color-default-white;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &--secondary {
+    background-image: linear-gradient(155deg, $pattens-blue 0%, $color-default-white 100%);
+  }
 }
