@@ -1,7 +1,7 @@
 mixin participate()
   section.participate
     .container
-      .participate__wrapper(data-animate="fadeIn")
+      .participate__wrapper(data-animate="fadeIn", data-animate-image="fadeScaleParticipateImage")
         .participate__content
           h2(data-animate-item)
             | Участвовать просто
@@ -11,5 +11,5 @@ mixin participate()
             | в&nbsp;сервисе, узнайте свой уровень и&nbsp;следите
             | за&nbsp;регулярными розыгрышами: каждую
             | среду и&nbsp;раз в&nbsp;квартал.
-        .participate__image(data-animate="fadeScale")
-          img(src="img/content/participate/participate.png", srcset="img/content/participate/participate@2x.png", width="634", height="697", alt="Содержимое телефона участника розыгрыша.", data-animate-item)
+        .participate__image
+          img(src="img/content/participate/participate.png", srcset="img/content/participate/participate@2x.png", width="634", height="697", alt="Содержимое телефона участника розыгрыша.", data-animate-image)

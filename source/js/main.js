@@ -53,6 +53,16 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     batchArray.push(fadeScale);
 
+    const fadeScaleParticipateImage = ScrollTrigger.batch('[data-animate-image=\'fadeScaleParticipateImage\']', {
+      onEnter: () => gsap.to('[data-animate-image="fadeScaleParticipateImage"] [data-animate-image]', {
+        autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
+      }),
+      markers: true,
+      start: 'top center',
+    });
+    batchArray.push(fadeScaleParticipateImage);
+
+
     // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
     ScrollTrigger.create({
       trigger: 'body',
