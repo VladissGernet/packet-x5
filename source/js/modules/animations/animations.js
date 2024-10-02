@@ -23,7 +23,7 @@ const addAnimation = (dataAttribute, animationName, animationOption) => {
   batchArray.push(
       ScrollTrigger.batch(`[data-animate-${dataAttribute}=\'${animationName}\']`, {
         onEnter: () => gsap.to(`[data-animate-${dataAttribute}="${animationName}"] [data-animate-${dataAttribute}]`, animationOption),
-        markers: true,
+        markers: false,
         start: 'top center',
       })
   );
