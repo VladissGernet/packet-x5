@@ -1,4 +1,9 @@
 .wrapper {
+  min-width: 320px;
+  // Необходимо для того, чтобы не вываливался
+  // декоративный background в header.
+  overflow: hidden;
+
   position: relative;
 
   display: flex;

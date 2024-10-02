@@ -4,7 +4,8 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeader} from './modules/header/header';
 import {initAgreement} from './modules/agreement/agreement.js';
-import {initParticipate} from './modules/participate/participate';
+import {gsap} from './vendor/gsap.min';
+import {ScrollTrigger} from './vendor/scroll-trigger.min';
 
 // ---------------------------------
 
@@ -30,7 +31,40 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     initHeader();
     initAgreement();
-    initParticipate();
+
+    gsap.registerPlugin(ScrollTrigger);
+    const batchArray = [];
+
+    const fadeIn = ScrollTrigger.batch('[data-animate=\'fadeIn\']', {
+      onEnter: () => gsap.to('[data-animate="fadeIn"] [data-animate-item]', {
+        autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.1,
+      }),
+      markers: true,
+      start: 'top center',
+    });
+    batchArray.push(fadeIn);
+
+    const fadeScale = ScrollTrigger.batch('[data-animate=\'fadeScale\']', {
+      onEnter: () => gsap.to('[data-animate="fadeScale"] [data-animate-item]', {
+        autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(1.5)', stagger: 0.1,
+      }),
+      markers: true,
+      start: 'top center',
+    });
+    batchArray.push(fadeScale);
+
+    // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
+    ScrollTrigger.create({
+      trigger: 'body',
+      start: 'top top',
+      end: 'bottom bottom',
+      onLeave: () => {
+        batchArray.forEach((array) => {
+          array.forEach((batch) => batch.vars.onEnter(batch));
+        });
+      },
+    });
+
   });
 });
 

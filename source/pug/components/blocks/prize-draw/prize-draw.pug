@@ -27,24 +27,24 @@
 //- Можно найти по ключевым словам.
 
 mixin prize-draw(data, modClass = "")
-  section.prize-draw(class=modClass)
+  section.prize-draw(class=modClass, data-animate="fadeIn")
     .container
-      h2!= data.blockTitle
+      h2(data-animate-item)!= data.blockTitle
       ul.prize-draw__list
         each item in data.list
-          li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
+          li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`, data-animate="fadeScale")
             h3!= item.itemTitle
             ul.prize-draw__sub-list
               each subItem in item.subItems
-                li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`)
+                li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`, data-animate-item)
                   if subItem.infoIcon === "false"
-                    header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`)
+                    header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`, data-animate-item)
                       +icon("x5", 28, 24)
                       span= subItem.spanText
                   else
-                    header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`)
+                    header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`, data-animate-item)
                       +icon(subItem.icon, 104, 24)
                       +icon("info", 24, 24)
-                  h4!= subItem.subItemTitle
-                  p!= subItem.description
-                  +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "")
+                  h4(data-animate-item)!= subItem.subItemTitle
+                  p(data-animate-item)!= subItem.description
+                  +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "", data-animate-item)
