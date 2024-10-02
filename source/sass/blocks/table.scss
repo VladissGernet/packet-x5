@@ -1,0 +1,114 @@
+.table {
+  padding: 31px 30px;
+  border-radius: 40px;
+  background-color: $color-default-white;
+
+  p {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: $nobel;
+    margin: 0 2px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    margin-top: 6px;
+
+    thead {
+      position: relative;
+
+      th {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: $color-default-black;
+        padding: 20px 0 15px;
+
+        &:first-of-type {
+          width: 178px;
+        }
+
+        &:first-of-type + th {
+          width: 208px;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $nobel;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 32px;
+          letter-spacing: -0.01em;
+          color: $color-default-black;
+          padding: 13px 0 0;
+        }
+      }
+    }
+  }
+
+  @include vp-767 {
+    padding: 0;
+    margin: 0 23px;
+
+    p {
+      span:first-of-type {
+        font-size: 24px;
+      }
+
+      span:last-of-type {
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+    }
+
+    table {
+      thead {
+        th {
+          font-size: 18px;
+          line-height: 110%;
+          letter-spacing: -0.02em;
+          padding: 16px 0 14px;
+
+          &:first-of-type {
+            width: 98px;
+          }
+
+          &:first-of-type + th {
+            width: 118px;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            font-size: 16px;
+            line-height: 135%;
+            letter-spacing: -0.02em;
+            padding: 14px 0 0;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+}

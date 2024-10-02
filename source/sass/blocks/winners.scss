@@ -228,5 +228,13 @@
         margin-top: 30px;
       }
     }
+
+    .winners__table {
+      margin-top: 50px;
+
+      @include vp-767 {
+        margin-top: 28px;
+      }
+    }
   }
 }
