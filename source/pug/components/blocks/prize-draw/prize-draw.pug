@@ -1,6 +1,8 @@
 //- Пример данных
 //- -
 //-   const prizeDrawExample = {
+//-     animationTitleName: 'fadeInPrizeDrawTitleWednesday',
+//-     animationItemsName: 'fadeScalePrizeDrawItemsWednesday',
 //-     blockTitle: "Разыгрываем в&nbsp;сентябре",
 //-     list: [
 //-       {
@@ -26,8 +28,8 @@
 //- Необходимо добавить цвета в prize-draw.scss для: titleColor, backgroundColor, spanColor.
 //- Можно найти по ключевым словам.
 
-mixin prize-draw(data, modClass = "")
-  section.prize-draw(class=modClass, data-animate-prize-draw-title="fadeInPrizeDrawTitle", data-animate-prize-draw-item="fadeScalePrizeDrawItems")
+mixin prize-draw(data, modClass="")
+  section.prize-draw(class=modClass, data-animate-prize-draw-title=data.animationTitleName, data-animate-prize-draw-item=data.animationItemsName)
     .container
       h2(data-animate-prize-draw-title)!= data.blockTitle
       ul.prize-draw__list

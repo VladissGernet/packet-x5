@@ -1,11 +1,13 @@
 $fadeScaleAnimations: (
   'fadeScaleParticipateImage': 'participate-image',
-  'fadeScalePrizeDrawItems': 'prize-draw-item',
+  'fadeScalePrizeDrawItemsWednesday': 'prize-draw-item',
+  'fadeScalePrizeDrawItemsSeptember': 'prize-draw-item',
 );
 
 $fadeInAnimations: (
   'fadeInParticipateText': 'participate-text',
-  'fadeInPrizeDrawTitle': 'prize-draw-title',
+  'fadeInPrizeDrawTitleWednesday': 'prize-draw-title',
+  'fadeInPrizeDrawTitleSeptember': 'prize-draw-title',
 );
 
 @each $animationName, $dataAttribute in $fadeScaleAnimations {

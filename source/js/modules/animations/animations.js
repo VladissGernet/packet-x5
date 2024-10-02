@@ -34,9 +34,13 @@ const initAnimations = () => {
   addAnimation('participate-image', 'fadeScaleParticipateImage', animationOptions.fadeScale);
   addAnimation('participate-text', 'fadeInParticipateText', animationOptions.fadeIn);
 
-  // Анимация для блока prize-draw.
-  addAnimation('prize-draw-item', 'fadeScalePrizeDrawItems', animationOptions.fadeScale);
-  addAnimation('prize-draw-title', 'fadeInPrizeDrawTitle', animationOptions.fadeIn);
+  // Анимация для блока prize-draw-wednesday.
+  addAnimation('prize-draw-item', 'fadeScalePrizeDrawItemsWednesday', animationOptions.fadeScale);
+  addAnimation('prize-draw-title', 'fadeInPrizeDrawTitleWednesday', animationOptions.fadeIn);
+
+  // Анимация для блока prize-draw-september.
+  addAnimation('prize-draw-item', 'fadeScalePrizeDrawItemsSeptember', animationOptions.fadeScale);
+  addAnimation('prize-draw-title', 'fadeInPrizeDrawTitleSeptember', animationOptions.fadeIn);
 
   // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
   ScrollTrigger.create({
@@ -52,4 +56,3 @@ const initAnimations = () => {
 };
 
 export {initAnimations};
-
