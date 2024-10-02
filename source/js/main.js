@@ -35,62 +35,58 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
     const batchArray = [];
 
-    // const fadeIn = ScrollTrigger.batch('[data-animate=\'fadeIn\']', {
-    //   onEnter: () => gsap.to('[data-animate="fadeIn"] [data-animate-item]', {
-    //     autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.1,
-    //   }),
-    //   markers: true,
-    //   start: 'top center',
-    // });
-    // batchArray.push(fadeIn);
+    const addFadeScaleAnimation = (options) => {
+      batchArray.push(
+          ScrollTrigger.batch(`[data-animate-${options.dataAttribute}=\'${options.animationName}\']`, {
+            onEnter: () => gsap.to(`[data-animate-${options.dataAttribute}="${options.animationName}"] [data-animate-${options.dataAttribute}]`, {
+              autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
+            }),
+            markers: true,
+            start: 'top center',
+          })
+      );
+    };
 
-    // const fadeScale = ScrollTrigger.batch('[data-animate=\'fadeScale\']', {
-    //   onEnter: () => gsap.to('[data-animate="fadeScale"] [data-animate-item]', {
-    //     autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(1.5)', stagger: 0.1,
-    //   }),
-    //   markers: true,
-    //   start: 'top center',
-    // });
-    // batchArray.push(fadeScale);
+    const addFadeInAnimation = (options) => {
+      batchArray.push(
+          ScrollTrigger.batch(`[data-animate-${options.dataAttribute}=\'${options.animationName}\']`, {
+            onEnter: () => gsap.to(`[data-animate-${ options.dataAttribute}="${options.animationName}"] [data-animate-${ options.dataAttribute}]`, {
+              autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.1,
+            }),
+            markers: true,
+            start: 'top center',
+          })
+      );
+    };
 
     // Анимация для блока Participate.
 
-    const fadeScaleParticipateImage = ScrollTrigger.batch('[data-animate-participate-image=\'fadeScaleParticipateImage\']', {
-      onEnter: () => gsap.to('[data-animate-participate-image="fadeScaleParticipateImage"] [data-animate-participate-image]', {
-        autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
-      }),
-      start: 'top center',
-    });
-    batchArray.push(fadeScaleParticipateImage);
+    const participateImageAnimationOptions = {
+      animationName: 'fadeScaleParticipateImage',
+      dataAttribute: 'participate-image',
+    };
 
-    const fadeInParticipateText = ScrollTrigger.batch('[data-animate-participate-text=\'fadeInParticipateText\']', {
-      onEnter: () => gsap.to('[data-animate-participate-text="fadeInParticipateText"] [data-animate-participate-text]', {
-        autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.1,
-      }),
-      start: 'top center',
-    });
-    batchArray.push(fadeInParticipateText);
+    const participateTextAnimationOptions = {
+      animationName: 'fadeInParticipateText',
+      dataAttribute: 'participate-text',
+    };
+
+    addFadeScaleAnimation(participateImageAnimationOptions);
+    addFadeInAnimation(participateTextAnimationOptions);
 
     // Анимация для блока prize-draw.
 
-    const fadeInPrizeDrawTitle = ScrollTrigger.batch('[data-animate-prize-draw-title=\'fadeInPrizeDrawTitle\']', {
-      onEnter: () => gsap.to('[data-animate-prize-draw-title="fadeInPrizeDrawTitle"] [data-animate-prize-draw-title]', {
-        autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.1,
-      }),
-      markers: true,
-      start: 'top center',
-    });
-    batchArray.push(fadeInPrizeDrawTitle);
+    const prizeDrawItemsAnimationOptions = {
+      animationName: 'fadeScalePrizeDrawItems',
+      dataAttribute: 'prize-draw-item',
+    };
+    const prizeDrawTitleAnimationOptions = {
+      animationName: 'fadeInPrizeDrawTitle',
+      dataAttribute: 'prize-draw-title',
+    };
 
-    const fadeScalePrizeDrawItems = ScrollTrigger.batch('[data-animate-prize-draw-item=\'fadeScalePrizeDrawItems\']', {
-      onEnter: () => gsap.to('[data-animate-prize-draw-item="fadeScalePrizeDrawItems"] [data-animate-prize-draw-item]', {
-        autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
-      }),
-      markers: true,
-      start: 'top center',
-    });
-    batchArray.push(fadeScalePrizeDrawItems);
-
+    addFadeScaleAnimation(prizeDrawItemsAnimationOptions);
+    addFadeInAnimation(prizeDrawTitleAnimationOptions);
 
     // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
     ScrollTrigger.create({
