@@ -31,6 +31,44 @@ window.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initAgreement();
     initAnimations();
+
+    const tableDates = {
+      '1': '02.08.23 - 09.08.23',
+      '2': '09.08.23 - 16.08.23',
+      '3': '16.08.23 - 23.08.23',
+      '4': '23.08.23 - 30.08.23',
+      '5': '30.08.23 - 07.09.23',
+      '6': '07.09.23 - 14.09.23',
+      '7': '14.09.23 — 21.09.23',
+    };
+    const regexDate = /(\d{2}\.\d{2}\.(\d{2}|\d{4}))/;
+
+    // table
+    const initWinnersTable = () => {
+      const section = document.querySelector('.winners--table');
+      if (!section) {
+        return;
+      }
+
+      // Взаимодействие с select.
+      const spanText = section.querySelector('.custom-select__text');
+      const callbackName = (mutationsList) => {
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            const selectedDate = spanText.textContent.match(regexDate)[0];
+
+
+            console.log(selectedDate);
+          }
+        }
+      };
+      const observer = new MutationObserver(callbackName);
+      observer.observe(spanText, {childList: true, subtree: true});
+
+    };
+
+    initWinnersTable();
+
   });
 });
 
