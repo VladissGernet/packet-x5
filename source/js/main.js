@@ -53,14 +53,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     batchArray.push(fadeScale);
 
-    const fadeScaleParticipateImage = ScrollTrigger.batch('[data-animate-image=\'fadeScaleParticipateImage\']', {
-      onEnter: () => gsap.to('[data-animate-image="fadeScaleParticipateImage"] [data-animate-image]', {
+    // Анимация для блока Participate.
+
+    const fadeScaleParticipateImage = ScrollTrigger.batch('[data-animate-participate-image=\'fadeScaleParticipateImage\']', {
+      onEnter: () => gsap.to('[data-animate-participate-image="fadeScaleParticipateImage"] [data-animate-participate-image]', {
         autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
       }),
       markers: true,
       start: 'top center',
     });
     batchArray.push(fadeScaleParticipateImage);
+
+    const fadeInParticipateText = ScrollTrigger.batch('[data-animate-participate-text=\'fadeInParticipateText\']', {
+      onEnter: () => gsap.to('[data-animate-participate-text="fadeInParticipateText"] [data-animate-participate-text]', {
+        autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.1,
+      }),
+      markers: true,
+      start: 'top center',
+    });
+    batchArray.push(fadeInParticipateText);
 
 
     // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
