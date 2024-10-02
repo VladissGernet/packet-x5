@@ -19,3 +19,15 @@
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
+
+// Анимация для блока prize-draw.
+
+[data-animate-prize-draw-title="fadeInPrizeDrawTitle"] [data-animate-prize-draw-title] {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+[data-animate-prize-draw-item="fadeScalePrizeDrawItems"] [data-animate-prize-draw-item] {
+  opacity: 0;
+  transform: scale(0);
+}

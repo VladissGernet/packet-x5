@@ -35,23 +35,23 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
     const batchArray = [];
 
-    const fadeIn = ScrollTrigger.batch('[data-animate=\'fadeIn\']', {
-      onEnter: () => gsap.to('[data-animate="fadeIn"] [data-animate-item]', {
-        autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.1,
-      }),
-      markers: true,
-      start: 'top center',
-    });
-    batchArray.push(fadeIn);
+    // const fadeIn = ScrollTrigger.batch('[data-animate=\'fadeIn\']', {
+    //   onEnter: () => gsap.to('[data-animate="fadeIn"] [data-animate-item]', {
+    //     autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.1,
+    //   }),
+    //   markers: true,
+    //   start: 'top center',
+    // });
+    // batchArray.push(fadeIn);
 
-    const fadeScale = ScrollTrigger.batch('[data-animate=\'fadeScale\']', {
-      onEnter: () => gsap.to('[data-animate="fadeScale"] [data-animate-item]', {
-        autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(1.5)', stagger: 0.1,
-      }),
-      markers: true,
-      start: 'top center',
-    });
-    batchArray.push(fadeScale);
+    // const fadeScale = ScrollTrigger.batch('[data-animate=\'fadeScale\']', {
+    //   onEnter: () => gsap.to('[data-animate="fadeScale"] [data-animate-item]', {
+    //     autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(1.5)', stagger: 0.1,
+    //   }),
+    //   markers: true,
+    //   start: 'top center',
+    // });
+    // batchArray.push(fadeScale);
 
     // Анимация для блока Participate.
 
@@ -59,7 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
       onEnter: () => gsap.to('[data-animate-participate-image="fadeScaleParticipateImage"] [data-animate-participate-image]', {
         autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
       }),
-      markers: true,
       start: 'top center',
     });
     batchArray.push(fadeScaleParticipateImage);
@@ -68,10 +67,29 @@ window.addEventListener('DOMContentLoaded', () => {
       onEnter: () => gsap.to('[data-animate-participate-text="fadeInParticipateText"] [data-animate-participate-text]', {
         autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.1,
       }),
-      markers: true,
       start: 'top center',
     });
     batchArray.push(fadeInParticipateText);
+
+    // Анимация для блока prize-draw.
+
+    const fadeInPrizeDrawTitle = ScrollTrigger.batch('[data-animate-prize-draw-title=\'fadeInPrizeDrawTitle\']', {
+      onEnter: () => gsap.to('[data-animate-prize-draw-title="fadeInPrizeDrawTitle"] [data-animate-prize-draw-title]', {
+        autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.1,
+      }),
+      markers: true,
+      start: 'top center',
+    });
+    batchArray.push(fadeInPrizeDrawTitle);
+
+    const fadeScalePrizeDrawItems = ScrollTrigger.batch('[data-animate-prize-draw-item=\'fadeScalePrizeDrawItems\']', {
+      onEnter: () => gsap.to('[data-animate-prize-draw-item="fadeScalePrizeDrawItems"] [data-animate-prize-draw-item]', {
+        autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(1.5)', stagger: 0.1,
+      }),
+      markers: true,
+      start: 'top center',
+    });
+    batchArray.push(fadeScalePrizeDrawItems);
 
 
     // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
