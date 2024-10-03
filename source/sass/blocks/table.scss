@@ -44,7 +44,8 @@
       }
     }
 
-    th, td {
+    th,
+    td {
       &:first-of-type {
         width: 178px;
       }
@@ -105,7 +106,8 @@
         }
       }
 
-      th, td {
+      th,
+      td {
         &:first-of-type {
           width: 98px;
         }
@@ -118,6 +120,7 @@
 
       tbody {
         max-height: 500px;
+
         td {
           font-size: 16px;
           line-height: 135%;
@@ -153,11 +156,12 @@
         max-height: 648px;
 
         td {
-          font-size: 12px !important;
+          font-size: 12px;
         }
       }
 
-      th, td {
+      th,
+      td {
         &:first-of-type {
           width: 66px;
         }
