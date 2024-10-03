@@ -42,6 +42,20 @@ window.addEventListener('DOMContentLoaded', () => {
       '7': '14.09.23 — 21.09.23',
     };
     const regexDate = /(\d{2}\.\d{2}\.(\d{2}|\d{4}))/;
+    const updateWeekAndDate = (selectedDate, weekAndDate) => {
+      for (const key in tableDates) {
+        if (tableDates.hasOwnProperty(key)) { // Проверяем, является ли свойство собственным
+          const keyDate = tableDates[key].match(regexDate)[0];
+          if (keyDate === selectedDate) {
+            const numberOfWeek = key;
+            weekAndDate[0].textContent = numberOfWeek + ' неделя';
+            weekAndDate[1].textContent = tableDates[key];
+            return;
+          }
+        }
+      }
+    };
+
 
     // table
     const initWinnersTable = () => {
@@ -49,6 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (!section) {
         return;
       }
+      const weekAndDate = section.querySelectorAll('.winners__table p span');
 
       // Взаимодействие с select.
       const spanText = section.querySelector('.custom-select__text');
@@ -56,9 +71,8 @@ window.addEventListener('DOMContentLoaded', () => {
         for (const mutation of mutationsList) {
           if (mutation.type === 'childList') {
             const selectedDate = spanText.textContent.match(regexDate)[0];
-
-
-            console.log(selectedDate);
+            updateWeekAndDate(selectedDate, weekAndDate);
+            return;
           }
         }
       };
@@ -66,9 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
       observer.observe(spanText, {childList: true, subtree: true});
 
     };
-
     initWinnersTable();
-
   });
 });
 
