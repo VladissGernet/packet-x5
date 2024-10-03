@@ -92,26 +92,26 @@
     margin: 22px 0 0;
   }
 
-  .js-search-not-empty button {
+  &.js-search-not-empty button {
     pointer-events: auto;
     cursor: pointer;
 
     svg {
       &:first-child {
-        display: none;
         opacity: 0;
         transform: translate(50%, 50%) scale(0);
       }
 
       &:last-child {
-        display: block;
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
-  .js-search-error input, .js-search-error button {
+  &.js-search-error input,
+  &.js-search-error button,
+  &.js-search-error p {
     color: $international-orange;
   }
 }

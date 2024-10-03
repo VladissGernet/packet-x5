@@ -1,17 +1,24 @@
+import {SearchMessage} from './constants';
+
 const initSearchInput = () => {
-  const searchInputWrapper = document.querySelector('.search__field');
-  if (!searchInputWrapper) {
+  const search = document.querySelector('.search');
+  if (!search) {
     return;
   }
-  const input = searchInputWrapper.querySelector('input');
+  const searchInputWrapper = document.querySelector('.search__field');
+  const input = search.querySelector('input');
+  const help = search.querySelector('p');
+
   const onSearchInputInput = (evt) => {
-    searchInputWrapper.classList.remove('js-search-error');
+    search.classList.remove('js-search-error');
 
     if (evt.target.value.length > 0) {
-      searchInputWrapper.classList.add('js-search-not-empty');
+      search.classList.add('js-search-not-empty');
     } else {
-      searchInputWrapper.classList.remove('js-search-not-empty');
+      search.classList.remove('js-search-not-empty');
     }
+    search.classList.remove('js-search-error');
+    help.textContent = SearchMessage.DEFAULT;
   };
   input.addEventListener('input', onSearchInputInput);
 
@@ -19,8 +26,9 @@ const initSearchInput = () => {
   const onButtonClick = () => {
     input.value = '';
     input.focus();
-    searchInputWrapper.classList.remove('js-search-not-empty');
-    searchInputWrapper.classList.remove('js-search-error');
+    search.classList.remove('js-search-not-empty');
+    search.classList.remove('js-search-error');
+    help.textContent = SearchMessage.DEFAULT;
   };
   button.addEventListener('click', onButtonClick);
 };

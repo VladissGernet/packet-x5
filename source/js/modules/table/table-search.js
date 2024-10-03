@@ -1,3 +1,5 @@
+import {SearchMessage} from './../constants';
+
 const initSearchPhoneField = () => {
   const searchPhoneField = document.querySelector('.hero__search');
   const table = document.querySelector('.winners__table');
@@ -30,22 +32,34 @@ const initSearchPhoneField = () => {
     const tableRows = tbody.querySelectorAll('tr');
     const tableData = tbody.querySelectorAll('td');
     hideAllRows(tableRows);
+    let isAnyNumberAcceptable = false;
 
     tableData.forEach((item) => {
       const number = getLastFourNumbers(item);
       if (number !== false) {
         const isNumberAcceptable = compareNumber(`^${pattern}`, number);
         if (isNumberAcceptable) {
+          isAnyNumberAcceptable = true;
           item.closest('tr').style.display = 'table-row';
         }
       }
     });
+    return isAnyNumberAcceptable;
   };
+
+  const search = document.querySelector('.search');
+  const searchFieldHelp = search.querySelector('p');
 
   searchPhoneField.addEventListener('submit', (event) => {
     event.preventDefault();
     const inputValue = searchPhoneField.querySelector('input').value;
-    findNumber(inputValue);
+    if (findNumber(inputValue) === false) {
+      search.classList.add('js-search-error');
+      searchFieldHelp.textContent = SearchMessage.ERROR;
+    } else {
+      search.classList.remove('js-search-error');
+      searchFieldHelp.textContent = SearchMessage.DEFAULT;
+    }
   });
 };
 
