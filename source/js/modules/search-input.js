@@ -14,6 +14,15 @@ const initSearchInput = () => {
     }
   };
   input.addEventListener('input', onSearchInputInput);
+
+  const button = searchInputWrapper.querySelector('button');
+  const onButtonClick = () => {
+    input.value = '';
+    input.focus();
+    searchInputWrapper.classList.remove('js-search-not-empty');
+    searchInputWrapper.classList.remove('js-search-error');
+  };
+  button.addEventListener('click', onButtonClick);
 };
 
 export {initSearchInput};
