@@ -9,6 +9,13 @@ const initSearchInput = () => {
   const input = search.querySelector('input');
   const help = search.querySelector('p');
 
+  // Проверка на ввод только цифр.
+  input.addEventListener('keydown', (event) => {
+    if (event.key.match(/\d/) === null) {
+      event.preventDefault();
+    }
+  });
+
   const onSearchInputInput = (evt) => {
     search.classList.remove('js-search-error');
 
