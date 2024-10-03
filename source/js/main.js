@@ -56,7 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-
     // table
     const initWinnersTable = () => {
       const section = document.querySelector('.winners--table');
@@ -67,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Взаимодействие с select.
       const spanText = section.querySelector('.custom-select__text');
-      const callbackName = (mutationsList) => {
+      const onSelectNewOption = (mutationsList) => {
         for (const mutation of mutationsList) {
           if (mutation.type === 'childList') {
             const selectedDate = spanText.textContent.match(regexDate)[0];
@@ -76,10 +75,44 @@ window.addEventListener('DOMContentLoaded', () => {
           }
         }
       };
-      const observer = new MutationObserver(callbackName);
+      const observer = new MutationObserver(onSelectNewOption);
       observer.observe(spanText, {childList: true, subtree: true});
 
+      // Mock данные телефонных номеров победителей.
+      const getWinners = () => {
+        const VALUE_OF_WINNERS = 20;
+        const winners = new Set();
+        while (winners.size < VALUE_OF_WINNERS) {
+          const newWinnersGroupArray = Math.random().toString(10).match(/(\d{4})(?=(\d{4})|$)/g);
+          for (let i = 0; i < newWinnersGroupArray.length && winners.size < VALUE_OF_WINNERS; i++) {
+            winners.add(newWinnersGroupArray[i]);
+          }
+        }
+        return winners;
+      };
+      const getWinnersPhoneNumbers = () => {
+        const winners = getWinners();
+        const winnersArray = [];
+        winners.forEach((value) => {
+          winnersArray.push(`7XXXXXX${value}`);
+        });
+        return winnersArray;
+      };
+      // Mock данные победителей.
+      const PRIZE_DRAW_WEEKS = 7;
+      const allWinnersMockData = [];
+      for (let i = 0; i < PRIZE_DRAW_WEEKS; i++) {
+        const weekWinners = getWinnersPhoneNumbers().map((winnerPhone) => {
+          return {
+            name: 'Владислав',
+            phone: winnerPhone,
+            prize: 'Сертификат на покупки в «Пятёрочке»',
+          };
+        });
+        allWinnersMockData.push(weekWinners);
+      }
     };
+
     initWinnersTable();
   });
 });
