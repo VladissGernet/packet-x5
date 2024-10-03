@@ -1,4 +1,4 @@
-import {getMockWinnersData} from './get-mock-winners-data';
+import {getMockWinnersData} from '../get-mock-winners-data';
 
 const INITIAL_TABLE_WEEK_ID = 0;
 const tableDates = {

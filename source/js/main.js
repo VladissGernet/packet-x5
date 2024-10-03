@@ -5,7 +5,8 @@ import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeader} from './modules/header';
 import {initAgreement} from './modules/agreement.js';
 import {initAnimations} from './modules/animations.js';
-import {initWinnersTable} from './modules/table.js';
+import {initWinnersTable} from './modules/table/table.js';
+import {initSearchPhoneField} from './modules/table/table-search.js';
 
 // ---------------------------------
 
@@ -33,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initAgreement();
     initAnimations();
     initWinnersTable();
+    initSearchPhoneField();
   });
 });
 
