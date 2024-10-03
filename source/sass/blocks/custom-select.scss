@@ -119,7 +119,8 @@
     @include vp-1023 {
       width: 310px;
       padding: 20px 10px;
-      bottom: 633px;
+      top: -585px;
+      bottom: unset;
       background-color: $color-default-white;
     }
   }
@@ -321,6 +322,11 @@
         opacity: 1;
         width: 100vw;
         height: 100vh;
+
+        @media (max-width: 319px) {
+          width: 320px;
+          height: 100%;
+        }
       }
     }
   }
