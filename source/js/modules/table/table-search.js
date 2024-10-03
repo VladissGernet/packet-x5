@@ -31,7 +31,6 @@ const initSearchPhoneField = () => {
     const tableData = tbody.querySelectorAll('td');
     hideAllRows(tableRows);
 
-
     tableData.forEach((item) => {
       const number = getLastFourNumbers(item);
       if (number !== false) {

@@ -6,6 +6,7 @@ import {initHeader} from './modules/header';
 import {initAgreement} from './modules/agreement.js';
 import {initAnimations} from './modules/animations.js';
 import {initWinnersTable} from './modules/table/table.js';
+import {initSearchInput} from './modules/search-input.js';
 import {initSearchPhoneField} from './modules/table/table-search.js';
 
 // ---------------------------------
@@ -35,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initWinnersTable();
     initSearchPhoneField();
+    initSearchInput();
   });
 });
 

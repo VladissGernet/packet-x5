@@ -3,6 +3,7 @@ mixin search(formClass="")
     label(for="phone-input") Поиск по номеру телефона
     .search__field
       input(type="tel", id="phone-input", name="phone-input", pattern="^[0-9]{1,4}$", required)
-      button(type="submit", aria-label="Найти по номеру телефона")
+      button(type="button", aria-label="Найти по номеру телефона")
         +icon("search", 30, 30)
+        +icon("icon-close", 50, 50)
     p Введите последние 4 цифры номера телефона

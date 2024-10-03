@@ -143,11 +143,17 @@
 
       button {
         right: 6px;
-        top: 2px;
 
         svg {
-          width: 20px;
-          height: 20px;
+          &:first-child {
+            width: 20px;
+            height: 20px;
+          }
+
+          &:last-child {
+            width: 30px;
+            height: 30px;
+          }
         }
       }
 
