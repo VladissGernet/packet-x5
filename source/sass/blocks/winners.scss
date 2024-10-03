@@ -217,6 +217,10 @@
           margin-bottom: 15px;
         }
       }
+
+      @include vp-374 {
+        width: 300px;
+      }
     }
 
     .winners__select {
@@ -226,6 +230,10 @@
       @include vp-1023 {
         width: 325px;
         margin-top: 30px;
+      }
+
+      @include vp-374 {
+        width: 300px;
       }
     }
 

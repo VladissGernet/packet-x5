@@ -95,6 +95,7 @@
 
   &__search {
     margin-top: 45px;
+    max-width: 540px;
 
     @include vp-1023 {
       display: block;

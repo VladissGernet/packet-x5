@@ -1,5 +1,5 @@
 .table {
-  padding: 31px 30px;
+  padding: 30px 28px;
   border-radius: 40px;
   background-color: $color-default-white;
 
@@ -9,7 +9,7 @@
     line-height: 120%;
     letter-spacing: -0.02em;
     color: $nobel;
-    margin: 0 2px;
+    margin: 0 4px;
     display: flex;
     gap: 20px;
     justify-content: space-between;
@@ -22,6 +22,7 @@
 
     thead {
       position: relative;
+      display: block;
 
       th {
         font-size: 24px;
@@ -29,15 +30,7 @@
         line-height: 120%;
         letter-spacing: -0.02em;
         color: $color-default-black;
-        padding: 20px 0 15px;
-
-        &:first-of-type {
-          width: 178px;
-        }
-
-        &:first-of-type + th {
-          width: 208px;
-        }
+        padding: 20px 0 14px;
       }
 
       &::before {
@@ -51,25 +44,47 @@
       }
     }
 
-    tbody {
-      tr {
-        td {
-          font-size: 24px;
-          font-weight: 500;
-          line-height: 32px;
-          letter-spacing: -0.01em;
-          color: $color-default-black;
-          padding: 13px 0 0;
-        }
+    th, td {
+      &:first-of-type {
+        width: 178px;
       }
+    }
+
+    th:first-of-type + th,
+    td:first-of-type + td {
+      width: 208px;
+    }
+
+    tbody {
+      display: block;
+      max-height: 630px;
+      overflow-y: auto;
+      width: 100%;
+
+      td {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: -0.01em;
+        color: $color-default-black;
+        padding: 13px 0 0;
+      }
+    }
+  }
+
+  @media (max-width: 940px) {
+    table tbody {
+      max-height: 1048px;
     }
   }
 
   @include vp-767 {
     padding: 0;
-    margin: 0 23px;
+    margin: 0 21px;
 
     p {
+      margin: 0 5px 0 4px;
+
       span:first-of-type {
         font-size: 24px;
       }
@@ -86,29 +101,78 @@
           font-size: 18px;
           line-height: 110%;
           letter-spacing: -0.02em;
-          padding: 16px 0 14px;
+          padding: 16px 0 12px;
+        }
+      }
 
-          &:first-of-type {
-            width: 98px;
-          }
+      th, td {
+        &:first-of-type {
+          width: 98px;
+        }
+      }
 
-          &:first-of-type + th {
-            width: 118px;
-          }
+      th:first-of-type + th,
+      td:first-of-type + td {
+        width: 118px;
+      }
+
+      tbody {
+        max-height: 500px;
+        td {
+          font-size: 16px;
+          line-height: 135%;
+          letter-spacing: -0.02em;
+          padding: 14px 0 0;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 556px) {
+    table tbody {
+      max-height: 786px;
+    }
+  }
+
+  @media (max-width: 441px) {
+    table tbody {
+      max-height: 1054px;
+    }
+  }
+
+  @media (max-width: 367px) {
+    table {
+      thead {
+        th {
+          font-size: 12px;
         }
       }
 
       tbody {
-        tr {
-          td {
-            font-size: 16px;
-            line-height: 135%;
-            letter-spacing: -0.02em;
-            padding: 14px 0 0;
-            vertical-align: top;
-          }
+        max-height: 648px;
+
+        td {
+          font-size: 12px !important;
         }
       }
+
+      th, td {
+        &:first-of-type {
+          width: 66px;
+        }
+      }
+
+      th:first-of-type + th,
+      td:first-of-type + td {
+        width: 80px;
+      }
+    }
+  }
+
+  @media (max-width: 328px) {
+    table tbody {
+      max-height: 856px;
     }
   }
 }
