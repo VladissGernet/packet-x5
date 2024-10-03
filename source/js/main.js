@@ -2,9 +2,9 @@ import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
-import {initHeader} from './modules/header/header';
-import {initAgreement} from './modules/agreement/agreement.js';
-import {initAnimations} from './modules/animations/animations.js';
+import {initHeader} from './modules/header';
+import {initAgreement} from './modules/agreement.js';
+import {initAnimations} from './modules/animations.js';
 
 // ---------------------------------
 

@@ -1,5 +1,5 @@
-import {gsap} from './../../vendor/gsap.min';
-import {ScrollTrigger} from './../../vendor/scroll-trigger.min';
+import {gsap} from './../vendor/gsap.min';
+import {ScrollTrigger} from './../vendor/scroll-trigger.min';
 
 gsap.registerPlugin(ScrollTrigger);
 const batchArray = [];
