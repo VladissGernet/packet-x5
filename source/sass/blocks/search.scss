@@ -35,6 +35,10 @@
       @include hover-focus {
         background-color: $alice-blue;
       }
+
+      @-moz-document url-prefix("") {
+        padding-bottom: 13px;
+      }
     }
 
     button {
