@@ -72,6 +72,8 @@
         left: 50%;
         display: block;
         transition: all $trans-default;
+        width: 30px;
+        height: 30px;
 
         &:first-child {
           transform: translate(-50%, -50%) scale(1);

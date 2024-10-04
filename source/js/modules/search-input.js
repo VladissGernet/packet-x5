@@ -11,7 +11,7 @@ const initSearchInput = () => {
 
   // Проверка на ввод только цифр.
   input.addEventListener('keydown', (event) => {
-    if (event.key.match(/\d/) === null) {
+    if (event.key !== 'Enter' && event.key !== 'Backspace' && event.key.match(/\d/) === null) {
       event.preventDefault();
     }
   });
