@@ -2,6 +2,11 @@
   margin-top: 169px;
   min-height: 460px;
 
+  // Для устранения наложения декоративной
+  // картинки в header поверх блока.
+  position: relative;
+  z-index: 0;
+
   @include vp-1023 {
     margin-top: 100px;
     min-height: 274px;

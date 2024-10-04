@@ -4,6 +4,10 @@
 .prize-draw {
   margin-top: 80px;
   word-break: break-word;
+  // Для устранения наложения декоративной
+  // картинки в header поверх блока.
+  position: relative;
+  z-index: 0;
 
   @include vp-767 {
     margin-top: 22px;
