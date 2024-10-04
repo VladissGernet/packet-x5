@@ -74,13 +74,13 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
   }
 
   &__list {
     margin-top: 35px;
-    gap: 39px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
 
     @include vp-767 {
       margin-top: 19px;
@@ -105,6 +105,10 @@
       width: 100%;
       border-radius: 20px;
       padding: 13px 24px;
+    }
+
+    @include vp-374 {
+      padding: 3px;
     }
 
     h3 {
@@ -145,10 +149,16 @@
 
   &__sub-list {
     margin-top: 23px;
-    gap: 30px;
+
+    &--single-item {
+      max-width: 200px;
+    }
+
+    &--multiple-items {
+      max-width: 346px;
+    }
 
     @include vp-767 {
-      gap: 15px;
       margin-top: 15px;
     }
   }
@@ -186,6 +196,10 @@
       right: 0;
       width: 156px;
       height: 204px;
+    }
+
+    @include vp-374 {
+      min-width: 156px;
     }
   }
 

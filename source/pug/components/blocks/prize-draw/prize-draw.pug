@@ -36,17 +36,47 @@ mixin prize-draw(data, modClass="")
         each item in data.list
           li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
             h3!= item.itemTitle
-            ul.prize-draw__sub-list
-              each subItem in item.subItems
-                li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`, data-animate-prize-draw-item)
-                  if subItem.infoIcon === "false"
-                    header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`, data-animate-prize-draw-item)
-                      +icon("x5", 28, 24)
-                      span= subItem.spanText
-                  else
-                    header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`, data-animate-prize-draw-item)
-                      +icon(subItem.icon, 104, 24)
-                      +icon("info", 24, 24)
-                  h4(data-animate-prize-draw-item)!= subItem.subItemTitle
-                  p(data-animate-prize-draw-item)!= subItem.description
-                  +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "", data-animate-prize-draw-item)
+            if item.subItems.length !== 1
+              .swiper.mySwiper
+                ul.prize-draw__sub-list.prize-draw__sub-list--multiple-items.swiper-wrapper
+                  each subItem in item.subItems
+                    li.prize-draw__sub-item(class=`swiper-slide ${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`, data-animate-prize-draw-item)
+                      if subItem.infoIcon === "false"
+                        header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`, data-animate-prize-draw-item)
+                          +icon("x5", 28, 24)
+                          span= subItem.spanText
+                      else
+                        header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`, data-animate-prize-draw-item)
+                          +icon(subItem.icon, 104, 24)
+                          +icon("info", 24, 24)
+                      h4(data-animate-prize-draw-item)!= subItem.subItemTitle
+                      p(data-animate-prize-draw-item)!= subItem.description
+                      +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "", data-animate-prize-draw-item)
+                  each subItem in item.subItems
+                    li.prize-draw__sub-item(class=`swiper-slide ${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`, data-animate-prize-draw-item)
+                      if subItem.infoIcon === "false"
+                        header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`, data-animate-prize-draw-item)
+                          +icon("x5", 28, 24)
+                          span= subItem.spanText
+                      else
+                        header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`, data-animate-prize-draw-item)
+                          +icon(subItem.icon, 104, 24)
+                          +icon("info", 24, 24)
+                      h4(data-animate-prize-draw-item)!= subItem.subItemTitle
+                      p(data-animate-prize-draw-item)!= subItem.description
+                      +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "", data-animate-prize-draw-item)
+            else
+              ul.prize-draw__sub-list.prize-draw__sub-list--single-item
+                each subItem in item.subItems
+                  li.prize-draw__sub-item(class=`${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`, data-animate-prize-draw-item)
+                    if subItem.infoIcon === "false"
+                      header.prize-draw__sub-header(class=`prize-draw__sub-header--short-icon${subItem.spanColor ? ` prize-draw__sub-header--span-color-${subItem.spanColor}` : ""}`, data-animate-prize-draw-item)
+                        +icon("x5", 28, 24)
+                        span= subItem.spanText
+                    else
+                      header.prize-draw__sub-header(class=`prize-draw__sub-header--long-icon`, data-animate-prize-draw-item)
+                        +icon(subItem.icon, 104, 24)
+                        +icon("info", 24, 24)
+                    h4(data-animate-prize-draw-item)!= subItem.subItemTitle
+                    p(data-animate-prize-draw-item)!= subItem.description
+                    +img("content/prize-draw", `${subItem.image}`, "png", 156, 204, "", data-animate-prize-draw-item)

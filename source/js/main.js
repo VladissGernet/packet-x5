@@ -8,6 +8,7 @@ import {initAnimations} from './modules/animations.js';
 import {initWinnersTable} from './modules/table/table.js';
 import {initSearchInput} from './modules/search-input.js';
 import {initSearchPhoneField} from './modules/table/table-search.js';
+import Swiper from 'swiper';
 
 // ---------------------------------
 
@@ -37,6 +38,23 @@ window.addEventListener('DOMContentLoaded', () => {
     initWinnersTable();
     initSearchPhoneField();
     initSearchInput();
+
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      loop: true,
+      breakpoints: {
+        320: {
+          spaceBetween: 2,
+        },
+        374: {
+          spaceBetween: 16,
+        },
+        768: {
+          spaceBetween: 30,
+        },
+      },
+    });
   });
 });
 
