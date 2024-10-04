@@ -18,6 +18,14 @@
       }
     }
 
+    &.js-agreement-activated {
+      color: $color-default-white;
+
+      &::after {
+        transform: translateX(-10%);
+      }
+    }
+
     @include vp-1023 {
       min-width: unset;
       width: 100%;
