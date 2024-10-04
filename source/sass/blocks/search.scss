@@ -5,7 +5,8 @@
   display: inline-block;
   word-wrap: break-word;
 
-  label, &__field input {
+  label,
+  &__field input {
     font-size: 32px;
     font-weight: 700;
     line-height: 120%;
