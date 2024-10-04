@@ -5,11 +5,14 @@
   display: inline-block;
   word-wrap: break-word;
 
-  label {
+  label, &__field input {
     font-size: 32px;
     font-weight: 700;
     line-height: 120%;
     letter-spacing: -0.02em;
+  }
+
+  label {
     color: $nero;
     cursor: pointer;
   }
@@ -18,10 +21,6 @@
     position: relative;
 
     input {
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 120%;
-      letter-spacing: -0.02em;
       color: $dodger-blue;
       display: block;
       padding: 21px 90px 19px 25px;

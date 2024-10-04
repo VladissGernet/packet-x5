@@ -125,11 +125,19 @@
     }
   }
 
-  &__item {
+  &__item, &__text {
     font-size: 24px;
     font-weight: 700;
     line-height: 120%;
     letter-spacing: -0.02em;
+
+    @include vp-1023 {
+      font-size: 16px;
+      line-height: 126%;
+    }
+  }
+
+  &__item {
     color: $dodger-blue;
     padding: 10px 20px;
     border-radius: 20px;
@@ -150,11 +158,6 @@
       background-color: $dodger-blue;
       color: $color-default-white;
     }
-
-    @include vp-1023 {
-      font-size: 16px;
-      line-height: 126%;
-    }
   }
 
   &__error {
@@ -170,10 +173,6 @@
   }
 
   &__text {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 120%;
-    letter-spacing: -0.02em;
     color: $color-default-white;
     flex-shrink: 0;
     width: 100%;
@@ -182,11 +181,6 @@
     text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
-
-    @include vp-1023 {
-      font-size: 16px;
-      line-height: 126%;
-    }
   }
 
   &__icon {
