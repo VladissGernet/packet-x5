@@ -8,6 +8,7 @@ $fadeInAnimations: (
   'fadeInParticipateText': 'participate-text',
   'fadeInPrizeDrawTitleWednesday': 'prize-draw-title',
   'fadeInPrizeDrawTitleSeptember': 'prize-draw-title',
+  'fadeInWinners': 'winners-title',
 );
 
 @each $animationName, $dataAttribute in $fadeScaleAnimations {

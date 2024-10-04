@@ -42,6 +42,9 @@ const initAnimations = () => {
   addAnimation('prize-draw-item', 'fadeScalePrizeDrawItemsSeptember', animationOptions.fadeScale);
   addAnimation('prize-draw-title', 'fadeInPrizeDrawTitleSeptember', animationOptions.fadeIn);
 
+  // Анимация для блока winners.
+  addAnimation('winners-title', 'fadeInWinners', animationOptions.fadeIn);
+
   // хак с помощью которого мы анимируем элементы, если долистали до конца страницы, а тригер не успел сработать
   ScrollTrigger.create({
     trigger: 'body',
