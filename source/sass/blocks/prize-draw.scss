@@ -107,10 +107,6 @@
       padding: 13px 24px;
     }
 
-    @include vp-374 {
-      padding: 3px;
-    }
-
     h3 {
       font-size: 32px;
       line-height: 120%;
@@ -151,7 +147,24 @@
     margin-top: 23px;
 
     &--single-item {
-      max-width: 200px;
+      @include vp-374 {
+        // Необходимо для резины, чтобы одинокая карточка
+        // выглядела также, как и другие карточки.
+        display: flex;
+        gap: 10px;
+
+        .prize-draw__sub-item {
+          width: 100%;
+        }
+
+        &::after {
+          position: static;
+          display: block;
+          content: "";
+          width: 100%;
+          padding: 0 6px 0 10px;
+        }
+      }
     }
 
     &--multiple-items {
@@ -196,10 +209,11 @@
       right: 0;
       width: 156px;
       height: 204px;
-    }
 
-    @include vp-374 {
-      min-width: 156px;
+      @include vp-374 {
+        object-fit: contain;
+        object-position: bottom;
+      }
     }
   }
 
@@ -240,12 +254,20 @@
         font-size: 16px;
         font-weight: 700;
         line-height: 126%;
+
+        @include vp-374 {
+          font-size: 14px;
+        }
       }
     }
 
     &--long-icon {
       svg:first-child {
         display: block;
+
+        @include vp-374 {
+          width: 80px;
+        }
       }
 
       svg:last-child {
