@@ -13,5 +13,16 @@ const SwiperBreakpoints = {
   MOBILE: 375,
   TABLET: 769,
 };
+const PrizeDrawBreakpoints = {
+  MOBILE: 767,
+  TABLET: 768,
+};
+const PAGE_RELOAD_DELAY = 1000;
 
-export {SearchMessage, SwiperPrizeDrawOptions, SwiperBreakpoints};
+export {
+  SearchMessage,
+  SwiperPrizeDrawOptions,
+  SwiperBreakpoints,
+  PrizeDrawBreakpoints,
+  PAGE_RELOAD_DELAY
+};

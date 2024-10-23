@@ -147,9 +147,21 @@
   &__sub-list {
     margin-top: 23px;
     user-select: none;
+    gap: 33px;
+    flex-wrap: wrap;
+
+    @include vp-1023 {
+      gap: 20px;
+    }
+
+    @include vp-767 {
+      margin-top: 15px;
+      gap: unset;
+      flex-wrap: unset;
+    }
 
     &--single-item {
-      @include vp-1023 {
+      @include vp-767 {
         // Необходимо для резины, чтобы одинокая карточка
         // выглядела также, как и другие карточки.
         display: flex;
@@ -174,11 +186,9 @@
     }
 
     &--multiple-items {
-      max-width: 346px;
-    }
-
-    @include vp-767 {
-      margin-top: 15px;
+      @include vp-1023 {
+        max-width: 346px;
+      }
     }
   }
 
