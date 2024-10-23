@@ -37,7 +37,7 @@ mixin prize-draw(data, modClass="")
           li.prize-draw__item(class=`${item.titleColor ? `prize-draw__item--title-${item.titleColor}` : ""}`)
             h3!= item.itemTitle
             if item.subItems.length !== 1
-              .swiper.prize-draw-swiper
+              .swiper.prize-draw__swiper
                 ul.prize-draw__sub-list.prize-draw__sub-list--multiple-items.swiper-wrapper
                   each subItem in item.subItems
                     li.prize-draw__sub-item(class=`swiper-slide ${subItem.backgroundColor ? `prize-draw__sub-item--bc-${subItem.backgroundColor}` : ""}`, data-animate-prize-draw-item)

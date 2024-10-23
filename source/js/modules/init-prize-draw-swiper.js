@@ -2,7 +2,7 @@ import {Swiper} from './../vendor/swiper.min.js';
 import {SwiperPrizeDrawOptions, SwiperBreakpoints} from './constants.js';
 
 const initPrizeDrawSwiper = () => {
-  const containersWithSwiper = document.querySelectorAll('.prize-draw-swiper');
+  const containersWithSwiper = document.querySelectorAll('.prize-draw__swiper');
 
   if (!containersWithSwiper.length) {
     return;
