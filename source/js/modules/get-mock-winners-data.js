@@ -27,7 +27,7 @@ const getMockWinnersData = () => {
       return {
         name: 'Владислав',
         phone: winnerPhone,
-        prize: 'Сертификат на покупки в «Пятёрочке»',
+        prize: 'Сертификат на&nbsp;покупки в&nbsp;&laquo;Пятёрочке&raquo;',
       };
     });
     allWinnersMockData.push(weekWinners);

@@ -45,7 +45,7 @@ const generateTable = (tbody, data, tableWeekId) => {
     const winnerPrize = document.createElement('td');
     winnerName.textContent = data[tableWeekId][i].name;
     winnerPhone.textContent = data[tableWeekId][i].phone;
-    winnerPrize.textContent = data[tableWeekId][i].prize;
+    winnerPrize.innerHTML = data[tableWeekId][i].prize;
     const tableRow = document.createElement('tr');
     tableRow.appendChild(winnerName);
     tableRow.appendChild(winnerPhone);
@@ -60,6 +60,7 @@ const initWinnersTable = () => {
   if (!section) {
     return;
   }
+  // Данные победителей. Генерирую таблицу.
   const winnersData = getMockWinnersData();
   const tbody = section.querySelector('tbody');
   // Первоначальное заполнение таблицы.
