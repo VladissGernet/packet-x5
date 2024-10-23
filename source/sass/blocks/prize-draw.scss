@@ -145,6 +145,7 @@
 
   &__sub-list {
     margin-top: 23px;
+    user-select: none;
 
     &--single-item {
       @include vp-374 {
