@@ -84,6 +84,7 @@
 
   &__agreement {
     margin-top: 39px;
+    max-width: 450px;
 
     @include vp-1023 {
       margin: 22px auto 0;
