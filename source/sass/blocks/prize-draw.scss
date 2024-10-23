@@ -14,7 +14,7 @@
   }
 
   .container {
-    @include vp-424 {
+    @include vp-1023 {
       padding: 0;
     }
   }
@@ -55,6 +55,7 @@
 
     @include vp-1023 {
       font-size: 40px;
+      margin: 0 24px;
     }
 
     @include vp-767 {
@@ -63,7 +64,6 @@
 
     @include vp-424 {
       line-height: 120%;
-      margin: 0 24px;
     }
   }
 
@@ -95,6 +95,7 @@
 
     @include vp-1023 {
       background-image: linear-gradient(153deg, $alice-blue-2 0%, $color-default-white 100%);
+      width: 100%;
     }
 
     @include vp-767 {
@@ -148,11 +149,11 @@
     user-select: none;
 
     &--single-item {
-      @include vp-374 {
+      @include vp-1023 {
         // Необходимо для резины, чтобы одинокая карточка
         // выглядела также, как и другие карточки.
         display: flex;
-        gap: 10px;
+        gap: 16px;
 
         .prize-draw__sub-item {
           width: 100%;
@@ -166,6 +167,11 @@
           padding: 0 6px 0 10px;
         }
       }
+
+      @include vp-374 {
+        gap: 10px;
+      }
+
     }
 
     &--multiple-items {

@@ -11,7 +11,7 @@ const SwiperPrizeDrawOptions = {
 const SwiperBreakpoints = {
   MOBILE_MIN: 300,
   MOBILE: 375,
-  TABLET: 768,
+  TABLET: 769,
 };
 
 export {SearchMessage, SwiperPrizeDrawOptions, SwiperBreakpoints};
