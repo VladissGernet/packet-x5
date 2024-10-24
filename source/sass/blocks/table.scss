@@ -1,5 +1,5 @@
 .table {
-  padding: 30px 28px 11px;
+  padding: 30px 28px;
   border-radius: 40px;
   background-color: $color-default-white;
 
@@ -58,7 +58,7 @@
 
     tbody {
       display: block;
-      max-height: 630px;
+      max-height: 620px;
       overflow-y: auto;
       width: 100%;
 
@@ -73,13 +73,7 @@
     }
   }
 
-  @media (max-width: 940px) {
-    table tbody {
-      max-height: 1048px;
-    }
-  }
-
-  @include vp-767 {
+  @include vp-1023 {
     padding: 0;
     margin: 0 21px;
 
@@ -120,6 +114,7 @@
 
       tbody {
         max-height: 500px;
+        scrollbar-width: thin;
 
         td {
           font-size: 16px;
@@ -132,31 +127,27 @@
     }
   }
 
-  @media (max-width: 556px) {
+  @media (max-width: 594px) {
     table tbody {
-      max-height: 786px;
+      max-height: 770px;
     }
   }
 
-  @media (max-width: 441px) {
+  @media (max-width: 445px) {
     table tbody {
       max-height: 1054px;
     }
   }
 
-  @media (max-width: 340px) {
-    p span {
-      &:first-of-type {
-        font-size: 20px;
-      }
+  @media (max-width: 382px) {
+    margin-right: 16px;
 
-      &:last-of-type {
-        font-size: 16px;
-      }
+    p {
+      margin-right: 10px;
     }
   }
 
-  @media (max-width: 367px) {
+  @include vp-374 {
     table {
       thead {
         th {
@@ -186,7 +177,19 @@
     }
   }
 
-  @media (max-width: 328px) {
+  @media (max-width: 340px) {
+    p span {
+      &:first-of-type {
+        font-size: 20px;
+      }
+
+      &:last-of-type {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 326px) {
     table tbody {
       max-height: 856px;
     }

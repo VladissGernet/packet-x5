@@ -9,6 +9,7 @@ import {initWinnersTable} from './modules/table/table.js';
 import {initSearchInput} from './modules/search-input.js';
 import {initSearchPhoneField} from './modules/table/table-search.js';
 import {initPrizeDrawSwiper} from './modules/init-prize-draw-swiper.js';
+import {initTableHeightHandler} from './modules/init-table-height-handler.js';
 
 // ---------------------------------
 
@@ -39,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initWinnersTable();
     initSearchPhoneField();
     initSearchInput();
+    initTableHeightHandler();
   });
 });
 

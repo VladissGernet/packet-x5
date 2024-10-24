@@ -18,11 +18,16 @@ const PrizeDrawBreakpoints = {
   TABLET: 768,
 };
 const PAGE_RELOAD_DELAY = 1000;
+const TableHeightProperties = {
+  MAX_LINES: 13,
+  VALUE_TO_ADJUST_ROW_HEIGHT: 2,
+};
 
 export {
   SearchMessage,
   SwiperPrizeDrawOptions,
   SwiperBreakpoints,
   PrizeDrawBreakpoints,
-  PAGE_RELOAD_DELAY
+  PAGE_RELOAD_DELAY,
+  TableHeightProperties
 };
