@@ -1,6 +1,6 @@
-import {SearchMessage} from './constants';
+import {SearchMessage} from '../constants';
 
-const initSearchInput = () => {
+const initSearchInputValidation = () => {
   const search = document.querySelector('.search');
   if (!search) {
     return;
@@ -11,7 +11,12 @@ const initSearchInput = () => {
 
   // Проверка на ввод только цифр.
   input.addEventListener('keydown', (event) => {
-    if (event.key !== 'Enter' && event.key !== 'Backspace' && event.key.match(/\d/) === null) {
+    const isKeyCleared = () => {
+      const clearedKeys = ['Enter', 'Backspace', 'ArrowLeft', 'ArrowRight', 'Delete'];
+      return clearedKeys.includes(event.key);
+    };
+
+    if (isKeyCleared() === false && event.key.match(/\d/) === null) {
       event.preventDefault();
     }
   });
@@ -40,4 +45,4 @@ const initSearchInput = () => {
   button.addEventListener('click', onButtonClick);
 };
 
-export {initSearchInput};
+export {initSearchInputValidation};

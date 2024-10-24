@@ -6,10 +6,10 @@ import {initHeader} from './modules/header';
 import {initAgreement} from './modules/agreement.js';
 import {initAnimations} from './modules/animations.js';
 import {initWinnersTable} from './modules/table/table.js';
-import {initSearchInput} from './modules/search-input.js';
+import {initSearchInputValidation} from './modules/table/search-input-validation.js';
 import {initSearchPhoneField} from './modules/table/table-search.js';
 import {initPrizeDrawSwiper} from './modules/init-prize-draw-swiper.js';
-import {initTableHeightHandler} from './modules/init-table-height-handler.js';
+import {initTableHeightHandler} from './modules/table/init-table-height-handler.js';
 
 // ---------------------------------
 
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initPrizeDrawSwiper();
     initWinnersTable();
     initSearchPhoneField();
-    initSearchInput();
+    initSearchInputValidation();
     initTableHeightHandler();
   });
 });

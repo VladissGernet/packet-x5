@@ -1,4 +1,4 @@
-import {TableHeightProperties} from './constants.js';
+import {TableHeightProperties} from '../constants.js';
 
 const initTableHeightHandler = () => {
   const tableBody = document.querySelector('.winners__table tbody');
