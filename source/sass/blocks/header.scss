@@ -16,7 +16,6 @@
   &__background-image {
     position: absolute;
     top: 0;
-    z-index: -1;
   }
 
   &__background {
@@ -39,6 +38,7 @@
   &__ellipse {
     top: -156px;
     right: -98px;
+    z-index: 1;
 
     // Анимация при первой загрузки страницы
     transition: all $trans-default;
@@ -110,6 +110,7 @@
     right: 121px;
     width: 654px;
     height: 648px;
+    z-index: 1;
 
     // Анимация при первой загрузки страницы
     transition: all $trans-default;
