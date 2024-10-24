@@ -5,6 +5,11 @@
   left: 50%;
   transform: translateX(-50%);
 
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
   @include vp-1023 {
     padding-top: 10px;
   }
