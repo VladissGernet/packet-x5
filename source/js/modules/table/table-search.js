@@ -6,20 +6,21 @@ const initSearchPhoneField = () => {
   if (!searchPhoneField || !table) {
     return;
   }
-  const tbody = table.querySelector('tbody');
   const searchFieldHelp = searchPhoneField.querySelector('p');
   const searchPhoneInput = searchPhoneField.querySelector('input');
-  const tableRows = tbody.querySelectorAll('tr');
-  const tableData = tbody.querySelectorAll('td');
   const searchFieldClearButton = searchPhoneField.querySelector('button');
 
   const hideAllRows = () => {
+    const tbody = table.querySelector('tbody');
+    const tableRows = tbody.querySelectorAll('tr');
     tableRows.forEach((row) => {
       row.style.display = 'none';
     });
   };
 
   const showAllRows = () => {
+    const tbody = table.querySelector('tbody');
+    const tableRows = tbody.querySelectorAll('tr');
     tableRows.forEach((row) => {
       row.style.display = 'table-row';
     });
@@ -39,6 +40,8 @@ const initSearchPhoneField = () => {
   };
 
   const findNumber = (pattern) => {
+    const tbody = table.querySelector('tbody');
+    const tableData = tbody.querySelectorAll('td');
     hideAllRows();
     let isAnyNumberAcceptable = false;
 
