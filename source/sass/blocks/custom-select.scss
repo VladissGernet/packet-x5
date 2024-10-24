@@ -119,8 +119,10 @@
     @include vp-1023 {
       width: 310px;
       padding: 20px 10px;
-      top: -585px;
+      top: 30vh;
+      transform: translate(-50%, 0);
       bottom: unset;
+      position: fixed;
       background-color: $color-default-white;
     }
   }
