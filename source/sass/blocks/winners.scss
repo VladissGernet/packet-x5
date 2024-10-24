@@ -215,16 +215,13 @@
         line-height: 110%;
         letter-spacing: -0.02em;
         padding: 15px 30px;
-        width: 325px;
         border-radius: 12px;
+        width: calc(100% - 48px);
+        margin: 0 24px;
 
         &:not(:last-child) {
           margin-bottom: 15px;
         }
-      }
-
-      @include vp-374 {
-        width: 300px;
       }
     }
 
@@ -233,12 +230,8 @@
       width: 416px;
 
       @include vp-1023 {
-        width: 325px;
+        width: calc(100% - 48px);
         margin-top: 30px;
-      }
-
-      @include vp-374 {
-        width: 300px;
       }
     }
 
