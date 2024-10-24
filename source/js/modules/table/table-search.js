@@ -11,6 +11,7 @@ const initSearchPhoneField = () => {
   const searchPhoneInput = searchPhoneField.querySelector('input');
   const tableRows = tbody.querySelectorAll('tr');
   const tableData = tbody.querySelectorAll('td');
+  const searchFieldClearButton = searchPhoneField.querySelector('button');
 
   const hideAllRows = () => {
     tableRows.forEach((row) => {
@@ -70,6 +71,9 @@ const initSearchPhoneField = () => {
     if (evt.key === 'Backspace' && evt.target.value === '') {
       showAllRows();
     }
+  });
+  searchFieldClearButton.addEventListener('click', () => {
+    showAllRows();
   });
 };
 
