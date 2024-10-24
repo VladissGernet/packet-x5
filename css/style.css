@@ -3701,8 +3701,11 @@ button,
   .custom-select__list {
     width: 310px;
     padding: 20px 10px;
-    top: -585px;
+    top: 30vh;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
     bottom: unset;
+    position: fixed;
     background-color: #ffffff;
   }
 
