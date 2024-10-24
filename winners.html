@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Победители акции</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Сервис &amp;quot;Пакет&amp;quot; экономит деньги на регулярных покупках в Пятёрочке и Перекрёстке">
+    <link rel="icon" href="img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest" crossorigin="use-credentials">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="fonts/manrope-bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/manrope-medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header header--winners">
+        <div class="header__background">
+          <div class="header__desktop-gradient"><img src="img/svg/header-gradient-desktop.svg" width="1440" height="900" alt=""></div>
+          <div class="header__ellipse">
+            <picture>
+              <source type="image/svg+xml" media="(max-width: 1023px)" srcset="img/content/header/header-ellipse-mobile.jpg 1x, img/content/header/header-ellipse-mobile@2x.jpg 2x"><img src="img/svg/header-ellipse-desktop.svg" width="1042" height="1004" alt="">
+            </picture>
+          </div>
+          <div class="header__background-image"><img src="img/content/header/header-background.png" srcset="img/content/header/header-background@2x.png 2x" width="654" height="648" alt="">
+          </div>
+        </div>
+        <div class="container"><a class="header__logo" href="index.html" aria-label="Переход на главную"><img src="img/svg/logo.svg" width="165" height="49" alt="Логотип проекта Пакет X5."></a>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="hero__content">
+              <h1>Победители акции</h1>
+            </div>
+            <form class="search hero__search" method="post" enctype="multipart/form-data" action="#" autocomplete="off">
+              <label for="phone-input">Поиск по номеру телефона</label>
+              <div class="search__field">
+                <input type="tel" id="phone-input" name="phone-input" pattern="^[0-9]{1,4}$" required>
+                <button type="button" aria-label="Найти по номеру телефона">
+                  <svg width="30" height="30" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#search"></use>
+                  </svg>
+                  <svg width="30" height="30" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-close"></use>
+                  </svg>
+                </button>
+              </div>
+              <p>Введите последние 4&nbsp;цифры номера телефона</p>
+            </form>
+          </div>
+        </section>
+        <section class="winners winners--table">
+          <div class="container">
+            <h2>Список победителей</h2>
+            <div class="winners__buttons">
+              <button class="btn btn--secondary winners__button" type="button">Еженедельные</button>
+              <button class="btn btn--secondary winners__button" type="button">Розыгрыш в сентябре</button>
+            </div>
+            <div class="custom-select winners__select" data-select data-validate-type="select" data-name="some-name" data-id="id-example-1">
+              <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon">
+                  <svg width="10" height="10" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#select-arrow"></use>
+                  </svg></span></button>
+              <ul class="custom-select__list" role="listbox">
+                <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">02.08.23 — первый розыгрыш</li>
+                <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">09.08.23 — второй розыгрыш</li>
+                <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">16.08.23 — третий розыгрыш</li>
+                <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">23.08.23 — четвертый розыгрыш</li>
+                <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">30.08.23 — пятый розыгрыш</li>
+                <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">07.09.23 — шестой розыгрыш</li>
+                <li class="custom-select__item" tabindex="0" data-select-value="id-7" aria-selected="false" role="option">14.09.23 — седьмой розыгрыш</li>
+              </ul>
+            </div>
+            <div class="table winners__table">
+              <p><span>1 неделя</span><span>02.08.23 — 09.08.23</span></p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Имя</th>
+                    <th>Телефон</th>
+                    <th>Приз</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Владислав</td>
+                    <td>7XXXXXX8473</td>
+                    <td>Сертификат на покупки в «Пятёрочке»</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer footer--winners">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__column footer__column--copyright">
+              <svg width="78" height="72" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#x5"></use>
+              </svg>
+              <div class="footer__copyright">
+                <p>&copy;&nbsp;2021&ndash;2023<br>ООО &laquo;Корпоративный центр ИКС&nbsp;5&raquo;</p>
+              </div>
+            </div>
+            <div class="footer__column footer__column--links">
+              <div class="footer__links"><a class="link link--secondary footer__link" href="#">Политика конфиденциальности</a><a class="link link--secondary footer__link" href="#">Пользовательское соглашение</a><a class="link link--secondary footer__link" href="#">Правила акции</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
