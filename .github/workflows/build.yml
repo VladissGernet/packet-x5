@@ -8,12 +8,12 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '16.20.2'
       # Build
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Deploy 🚀
