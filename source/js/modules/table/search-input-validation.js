@@ -9,18 +9,20 @@ const initSearchInputValidation = () => {
   const input = search.querySelector('input');
   const help = search.querySelector('p');
 
-  // Проверка на ввод только цифр.
-  input.addEventListener('keydown', (event) => {
-    const isKeyCleared = () => {
-      const clearedKeys = ['Enter', 'Backspace', 'ArrowLeft', 'ArrowRight', 'Delete'];
-      return clearedKeys.includes(event.key);
-    };
+  // Проверка на нажатие разрешенных кнопок.
+  const isKeyCleared = (keyName) => {
+    const clearedKeys = ['Enter', 'Backspace', 'ArrowLeft', 'ArrowRight', 'Delete'];
+    return clearedKeys.includes(keyName);
+  };
 
-    if (isKeyCleared() === false && event.key.match(/\d/) === null) {
-      event.preventDefault();
+  input.addEventListener('keydown', (evt) => {
+    // Проверка на ввод только цифр и на нажатие разрешенных кнопок.
+    if (isKeyCleared(evt.key) === false && evt.key.match(/\d/) === null) {
+      evt.preventDefault();
     }
   });
 
+  // Управление вывода ошибки.
   const onSearchInputInput = (evt) => {
     search.classList.remove('js-search-error');
 
@@ -34,6 +36,7 @@ const initSearchInputValidation = () => {
   };
   input.addEventListener('input', onSearchInputInput);
 
+  // Управление кнопкой очистки поля.
   const button = searchInputWrapper.querySelector('button');
   const onButtonClick = () => {
     input.value = '';

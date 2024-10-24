@@ -6,12 +6,21 @@ const initSearchPhoneField = () => {
   if (!searchPhoneField || !table) {
     return;
   }
-
   const tbody = table.querySelector('tbody');
+  const searchFieldHelp = searchPhoneField.querySelector('p');
+  const searchPhoneInput = searchPhoneField.querySelector('input');
+  const tableRows = tbody.querySelectorAll('tr');
+  const tableData = tbody.querySelectorAll('td');
 
-  const hideAllRows = (tableRows) => {
+  const hideAllRows = () => {
     tableRows.forEach((row) => {
       row.style.display = 'none';
+    });
+  };
+
+  const showAllRows = () => {
+    tableRows.forEach((row) => {
+      row.style.display = 'table-row';
     });
   };
 
@@ -29,9 +38,7 @@ const initSearchPhoneField = () => {
   };
 
   const findNumber = (pattern) => {
-    const tableRows = tbody.querySelectorAll('tr');
-    const tableData = tbody.querySelectorAll('td');
-    hideAllRows(tableRows);
+    hideAllRows();
     let isAnyNumberAcceptable = false;
 
     tableData.forEach((item) => {
@@ -47,18 +54,21 @@ const initSearchPhoneField = () => {
     return isAnyNumberAcceptable;
   };
 
-  const search = document.querySelector('.search');
-  const searchFieldHelp = search.querySelector('p');
-
-  searchPhoneField.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const inputValue = searchPhoneField.querySelector('input').value;
-    if (findNumber(inputValue) === false) {
-      search.classList.add('js-search-error');
+  searchPhoneField.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    if (findNumber(searchPhoneInput.value) === false) {
+      searchPhoneField.classList.add('js-search-error');
       searchFieldHelp.textContent = SearchMessage.ERROR;
     } else {
-      search.classList.remove('js-search-error');
+      searchPhoneField.classList.remove('js-search-error');
       searchFieldHelp.textContent = SearchMessage.DEFAULT;
+    }
+  });
+
+  // Возврат выдачи к дефолтному состоянию при полной очистке поля.
+  searchPhoneInput.addEventListener('keyup', (evt) => {
+    if (evt.key === 'Backspace' && evt.target.value === '') {
+      showAllRows();
     }
   });
 };
