@@ -224,8 +224,8 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 156px;
-      height: 204px;
+      max-width: 156px;
+      max-height: 168px;
 
       @include vp-374 {
         object-fit: contain;
