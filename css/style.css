@@ -1730,7 +1730,6 @@ button,
 .header__background-image {
   position: absolute;
   top: 0;
-  z-index: -1;
 }
 
 .header__background {
@@ -1750,6 +1749,7 @@ button,
 .header__ellipse {
   top: -156px;
   right: -98px;
+  z-index: 1;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-transform: scale(0.9);
@@ -1771,6 +1771,7 @@ button,
   right: 121px;
   width: 654px;
   height: 648px;
+  z-index: 1;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-transform: translate(55px, -25px);
