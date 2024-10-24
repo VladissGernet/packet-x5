@@ -29,6 +29,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 10px;
 
       @include vp-767 {
         display: none;
@@ -64,7 +65,7 @@
   }
 
   &__copyright {
-    margin-top: 46px;
+    margin-top: 42px;
 
     p {
       font-size: 14px;
@@ -89,7 +90,7 @@
     display: inline-block;
 
     &:not(:last-of-type) {
-      margin-bottom: 11px;
+      margin-bottom: 9px;
 
       @include vp-767 {
         margin-right: 12px;
